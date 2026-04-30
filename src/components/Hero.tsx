@@ -6,7 +6,6 @@ import { Ludoratory } from "./Ludoratory";
 
 interface HeroProps {
   site: SiteCopy;
-  specimenCount: number;
 }
 
 function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) {
@@ -33,7 +32,7 @@ function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) 
   );
 }
 
-export function Hero({ site, specimenCount }: HeroProps) {
+export function Hero({ site }: HeroProps) {
   const { name, attribution, headline, headlineGlowToken, thesis } = site;
 
   return (
@@ -54,37 +53,33 @@ export function Hero({ site, specimenCount }: HeroProps) {
           mb: 4.5,
         }}
       >
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: 1,
-          }}
-        >
-          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
-            <Ludoratory size={28} />
-            <Box
-              component="span"
-              sx={{
-                fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-                fontWeight: 700,
-                fontSize: 18,
-                letterSpacing: "0.04em",
-              }}
-            >
-              {name.toUpperCase()}
-            </Box>
-          </Box>
-          <Box sx={{ display: "inline-flex", alignItems: "center", color: "text.secondary", fontWeight: 400 }}>
-            <Box component="span" sx={{ mr: 0.75 }}>·</Box>
-            <Link href={attribution.url} target="_blank" rel="noopener noreferrer" sx={{ color: "inherit", textDecoration: "none", "&:hover": { textDecoration: "underline" } }}>
-              by {attribution.name} ↗
-            </Link>
+        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
+          <Ludoratory size={36} />
+          <Box
+            component="span"
+            sx={{
+              fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+              fontWeight: 700,
+              fontSize: 18,
+              letterSpacing: "0.04em",
+            }}
+          >
+            {name.toUpperCase()}
           </Box>
         </Box>
-        <Box>SPECIMENS: {String(specimenCount).padStart(2, "0")}</Box>
+        <Link
+          href={attribution.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "text.secondary",
+            fontWeight: 400,
+            textDecoration: "none",
+            "&:hover": { textDecoration: "underline" },
+          }}
+        >
+          by {attribution.name} ↗
+        </Link>
       </Box>
 
       {/* headline */}

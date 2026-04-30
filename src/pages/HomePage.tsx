@@ -37,7 +37,7 @@ export default function HomePage() {
           position: "relative",
         }}
       >
-        <Hero site={content.site} specimenCount={content.games.length} />
+        <Hero site={content.site} />
         <SpecimenCatalog
           games={adaptedGames}
           label={sectionsById.specimenCatalog.label}
