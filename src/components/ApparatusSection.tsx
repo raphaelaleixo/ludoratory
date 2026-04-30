@@ -123,7 +123,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
           >
             docs ↗
           </Link>
-          <Box component="span" sx={{ color: "#6a7a6f", fontSize: 12 }}>
+          <Box component="span" sx={{ color: "text.disabled", fontSize: 12 }}>
             {apparatus.license} licensed
           </Box>
         </Box>
