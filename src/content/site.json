@@ -3,8 +3,8 @@
     "name": "Ludoratory",
     "establishedRoman": "MMXXV",
     "attribution": { "name": "Raphael Aleixo", "url": "https://aleixo.me" },
-    "headline": ["Analog games,", "extracted &", "re-grown for the web."],
-    "headlineGlowToken": "extracted",
+    "headline": ["From Experiment", "to Experience"],
+    "headlineGlowToken": "Experience",
     "thesis": "A laboratory adapting board, card, and party games into multi-device experiences. Browser-native. Real-time. No install. Bring your own phones; we'll supply the chaos.",
     "warning": "~ side effects may include excessive game-night planning ~",
     "marginScribbles": [
