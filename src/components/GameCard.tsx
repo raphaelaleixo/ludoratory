@@ -185,6 +185,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
               rel="noopener noreferrer"
               sx={{
                 color: "accent.magenta",
+                fontSize: 14,
                 textDecoration: "none",
                 fontWeight: 600,
                 transition: "filter 0.2s ease",
@@ -201,6 +202,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
               rel="noopener noreferrer"
               sx={{
                 color: "accent.acid",
+                fontSize: 14,
                 textDecoration: "none",
                 fontWeight: 600,
                 transition: "filter 0.2s ease",
