@@ -64,9 +64,10 @@ export function Hero({ site, specimenCount }: HeroProps) {
         <Box
           sx={{
             display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            alignItems: { xs: "flex-start", md: "center" },
-            gap: { xs: 0.75, md: 1 },
+            flexDirection: "row",
+            flexWrap: "wrap",
+            alignItems: "center",
+            gap: 1,
           }}
         >
           <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
@@ -84,7 +85,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
             </Box>
           </Box>
           <Box sx={{ display: "inline-flex", alignItems: "center", color: "text.secondary", fontWeight: 400 }}>
-            <Box component="span" sx={{ display: { xs: "none", md: "inline" }, mr: 0.75 }}>·</Box>
+            <Box component="span" sx={{ mr: 0.75 }}>·</Box>
             <Link href={attribution.url} target="_blank" rel="noopener noreferrer" sx={{ color: "inherit", textDecoration: "none", "&:hover": { textDecoration: "underline" } }}>
               by {attribution.name} ↗
             </Link>
