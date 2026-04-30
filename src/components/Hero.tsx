@@ -36,7 +36,7 @@ function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) 
 }
 
 export function Hero({ site, specimenCount }: HeroProps) {
-  const { name, attribution, headline, headlineGlowToken, thesis, warning, marginScribbles } = site;
+  const { name, attribution, headline, headlineGlowToken, thesis, marginScribbles } = site;
   const scribblePositions = [
     { top: 95, right: 48, rotate: 7, fontSize: 24 },
     { top: 165, right: 24, rotate: -3, fontSize: 24 },
@@ -107,13 +107,10 @@ export function Hero({ site, specimenCount }: HeroProps) {
         ))}
       </Typography>
 
-      {/* thesis + warning */}
+      {/* thesis */}
       <Typography sx={{ fontSize: 16, lineHeight: 1.55, color: "text.secondary", maxWidth: "60ch", mb: 1 }}>
         {thesis}
       </Typography>
-      <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 24, lineHeight: 1, color: "accent.magenta", transform: "rotate(-1.5deg)", display: "inline-block", mt: 0.75 }}>
-        {warning}
-      </Box>
 
       {/* margin scribbles */}
       {marginScribbles.map((s, i) => {

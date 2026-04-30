@@ -33,9 +33,9 @@ export default function HomePage() {
         }}
       >
         <Hero site={content.site} specimenCount={content.games.length} />
-        <SpecimenCatalog games={adaptedGames} />
-        <LabOriginals games={originalGames} />
-        <ApparatusSection apparatus={content.apparatus} />
+        <SpecimenCatalog games={adaptedGames} note={content.sectionNotes.specimenCatalog} />
+        <LabOriginals games={originalGames} note={content.sectionNotes.labOriginals} />
+        <ApparatusSection apparatus={content.apparatus} note={content.sectionNotes.apparatus} />
         <HouseRules rules={content.houseRules} />
         <SiteFoot links={content.footer.links} license={content.footer.license} />
       </Box>

@@ -55,12 +55,18 @@ export interface SiteCopy {
   headline: string[];
   headlineGlowToken: string;
   thesis: string;
-  warning: string;
   marginScribbles: MarginScribbleData[];
+}
+
+export interface SectionNotes {
+  specimenCatalog: string;
+  labOriginals: string;
+  apparatus: string;
 }
 
 export interface SiteContent {
   site: SiteCopy;
+  sectionNotes: SectionNotes;
   games: Game[];
   apparatus: Apparatus;
   houseRules: HouseRule[];

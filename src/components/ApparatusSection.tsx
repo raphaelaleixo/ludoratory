@@ -3,15 +3,18 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import type { Apparatus } from "../types";
 import { SectionLabel } from "./SectionLabel";
+import { SectionNote } from "./SectionNote";
 
 interface ApparatusSectionProps {
   apparatus: Apparatus;
+  note?: string;
 }
 
-export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
+export function ApparatusSection({ apparatus, note }: ApparatusSectionProps) {
   return (
     <Box sx={{ position: "relative" }}>
       <SectionLabel>The Apparatus</SectionLabel>
+      {note && <SectionNote text={note} color="amber" rotate={-1} />}
       <Box
         sx={{
           background: "surface.apparatus",

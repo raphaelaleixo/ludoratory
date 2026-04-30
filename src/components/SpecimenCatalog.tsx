@@ -2,15 +2,18 @@ import Box from "@mui/material/Box";
 import type { Game } from "../types";
 import { GameCard } from "./GameCard";
 import { SectionLabel } from "./SectionLabel";
+import { SectionNote } from "./SectionNote";
 
 interface SpecimenCatalogProps {
   games: Game[];
+  note?: string;
 }
 
-export function SpecimenCatalog({ games }: SpecimenCatalogProps) {
+export function SpecimenCatalog({ games, note }: SpecimenCatalogProps) {
   return (
     <Box sx={{ position: "relative" }}>
       <SectionLabel>Specimen Catalog</SectionLabel>
+      {note && <SectionNote text={note} color="magenta" rotate={-1.5} />}
       <Box
         sx={{
           display: "grid",
