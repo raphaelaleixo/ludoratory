@@ -108,7 +108,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
       </Typography>
 
       {/* thesis + warning */}
-      <Typography sx={{ fontSize: 16, lineHeight: 1.55, color: "text.secondary", maxWidth: 540, mb: 1 }}>
+      <Typography sx={{ fontSize: 16, lineHeight: 1.55, color: "text.secondary", maxWidth: "60ch", mb: 1 }}>
         {thesis}
       </Typography>
       <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 24, lineHeight: 1, color: "accent.magenta", transform: "rotate(-1.5deg)", display: "inline-block", mt: 0.75 }}>
