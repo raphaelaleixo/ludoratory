@@ -19,7 +19,7 @@ export function SiteFoot({ email, links }: SiteFootProps) {
         justifyContent: "space-between",
         flexWrap: "wrap",
         gap: 2,
-        fontFamily: '"IBM Plex Mono", monospace',
+        fontFamily: '"Space Grotesk", "Inter", sans-serif',
         fontSize: 11,
         letterSpacing: "0.12em",
         textTransform: "uppercase",

@@ -51,7 +51,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          fontFamily: '"IBM Plex Mono", monospace',
+          fontFamily: '"Space Grotesk", "Inter", sans-serif',
           fontSize: "11px",
           letterSpacing: "0.14em",
           textTransform: "uppercase",

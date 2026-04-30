@@ -41,7 +41,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             left: 32,
             background: "tape.orange",
             color: "#2a1410",
-            fontFamily: '"IBM Plex Mono", monospace',
+            fontFamily: '"Space Grotesk", "Inter", sans-serif',
             fontSize: 10,
             fontWeight: 700,
             letterSpacing: "0.16em",
@@ -61,7 +61,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             <Box
               component="span"
               sx={{
-                fontFamily: '"IBM Plex Mono", monospace',
+                fontFamily: '"Space Grotesk", "Inter", sans-serif',
                 fontSize: 12,
                 fontWeight: 500,
                 color: "accent.acid",
@@ -80,7 +80,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
           </Typography>
           <Box
             sx={{
-              fontFamily: '"IBM Plex Mono", monospace',
+              fontFamily: '"Space Grotesk", "Inter", sans-serif',
               fontSize: 11.5,
               color: "accent.acid",
               background: "#060a08",
@@ -100,7 +100,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             flexDirection: "column",
             gap: 1,
             alignItems: { xs: "flex-start", md: "flex-end" },
-            fontFamily: '"IBM Plex Mono", monospace',
+            fontFamily: '"Space Grotesk", "Inter", sans-serif',
             fontSize: 10.5,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
@@ -136,7 +136,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        fontFamily: '"IBM Plex Mono", monospace',
+        fontFamily: '"Space Grotesk", "Inter", sans-serif',
         fontSize: 10,
         letterSpacing: "0.18em",
         textTransform: "uppercase",

@@ -27,7 +27,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
             right: 36,
             background: "tape.yellow",
             color: "#2a2010",
-            fontFamily: '"IBM Plex Mono", monospace',
+            fontFamily: '"Space Grotesk", "Inter", sans-serif',
             fontSize: 10,
             fontWeight: 700,
             letterSpacing: "0.16em",
@@ -53,7 +53,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
             <Box key={r.number} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
               <Box
                 sx={{
-                  fontFamily: '"IBM Plex Mono", monospace',
+                  fontFamily: '"Space Grotesk", "Inter", sans-serif',
                   fontSize: 10,
                   fontWeight: 600,
                   color: "accent.acid",
@@ -91,7 +91,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        fontFamily: '"IBM Plex Mono", monospace',
+        fontFamily: '"Space Grotesk", "Inter", sans-serif',
         fontSize: 10,
         letterSpacing: "0.18em",
         textTransform: "uppercase",

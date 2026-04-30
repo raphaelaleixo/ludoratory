@@ -33,7 +33,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        fontFamily: '"IBM Plex Mono", monospace',
+        fontFamily: '"Space Grotesk", "Inter", sans-serif',
         fontSize: 10,
         letterSpacing: "0.18em",
         textTransform: "uppercase",

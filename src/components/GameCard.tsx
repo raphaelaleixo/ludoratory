@@ -63,7 +63,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           [tapeSide]: 24,
           background: tapeBg(game.tapeVariant),
           color: game.tapeVariant === "blue" ? "#0e1a30" : "#2a2010",
-          fontFamily: '"IBM Plex Mono", monospace',
+          fontFamily: '"Space Grotesk", "Inter", sans-serif',
           fontSize: 10,
           fontWeight: 600,
           letterSpacing: "0.16em",
@@ -111,7 +111,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           )}
         </Box>
         {game.inspiration && (
-          <Box sx={{ fontFamily: '"IBM Plex Mono", monospace', fontSize: 10.5, color: "text.disabled", letterSpacing: "0.04em" }}>
+          <Box sx={{ fontFamily: '"Space Grotesk", "Inter", sans-serif', fontSize: 10.5, color: "text.disabled", letterSpacing: "0.04em" }}>
             ↳ {game.inspiration}
           </Box>
         )}
@@ -129,7 +129,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
             gap: 1,
             paddingTop: 1.5,
             borderTop: "1px dashed #2a3a30",
-            fontFamily: '"IBM Plex Mono", monospace',
+            fontFamily: '"Space Grotesk", "Inter", sans-serif',
             fontSize: 10,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
