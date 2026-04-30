@@ -44,7 +44,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
         <Typography variant="h2" sx={{ fontSize: 26, m: 0, mb: 0.75, color: "text.primary" }}>
           The fine print, kept short.
         </Typography>
-        <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 17, color: "text.disabled", maxWidth: 520, m: 0, mb: 2.5 }}>
+        <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 24, lineHeight: 1, color: "text.disabled", maxWidth: 520, m: 0, mb: 2.5 }}>
           how this place actually works ↓
         </Box>
 

@@ -99,8 +99,8 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
               sx={{
                 fontFamily: '"Caveat", cursive',
                 color: noteColors[index % noteColors.length],
-                fontSize: 18,
-                lineHeight: 1.05,
+                fontSize: 24,
+                lineHeight: 1,
                 whiteSpace: "nowrap",
                 transform: `rotate(${index % 2 === 0 ? -3 : 3}deg)`,
                 flexShrink: 0,

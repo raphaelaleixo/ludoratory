@@ -20,7 +20,7 @@ export function MarginScribble({
   text,
   color = "acid",
   rotate = -3,
-  fontSize = 20,
+  fontSize = 24,
   sx,
 }: MarginScribbleProps) {
   return (
@@ -31,7 +31,7 @@ export function MarginScribble({
         color: colorMap[color],
         position: "absolute",
         pointerEvents: "none",
-        lineHeight: 1.05,
+        lineHeight: 1,
         whiteSpace: "nowrap",
         transform: `rotate(${rotate}deg)`,
         fontSize: `${fontSize}px`,
