@@ -141,7 +141,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "text.disabled",
-        margin: "36px 0 18px",
+        margin: "36px 0 28px",
         display: "flex",
         alignItems: "center",
         gap: "10px",
