@@ -64,5 +64,5 @@ export interface SiteContent {
   games: Game[];
   apparatus: Apparatus;
   houseRules: HouseRule[];
-  footer: { email: string; links: FooterLink[] };
+  footer: { links: FooterLink[]; license: FooterLink };
 }

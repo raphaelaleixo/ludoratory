@@ -87,11 +87,11 @@
     { "number": "04", "title": "The database wipes daily.",  "description": "Every room evaporates at midnight UTC. There is no archive, no leaderboard server, no record. Play, then disappear." }
   ],
   "footer": {
-    "email": "raphael@ludoratory.com",
     "links": [
       { "label": "github",    "url": "https://github.com/raphaelaleixo" },
       { "label": "bsky",      "url": "https://bsky.app/profile/aleixo.me" },
       { "label": "portfolio", "url": "https://aleixo.me" }
-    ]
+    ],
+    "license": { "label": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/" }
   }
 }

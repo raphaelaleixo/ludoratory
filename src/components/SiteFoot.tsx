@@ -3,11 +3,11 @@ import Link from "@mui/material/Link";
 import type { FooterLink } from "../types";
 
 interface SiteFootProps {
-  email: string;
   links: FooterLink[];
+  license: FooterLink;
 }
 
-export function SiteFoot({ email, links }: SiteFootProps) {
+export function SiteFoot({ links, license }: SiteFootProps) {
   return (
     <Box
       component="footer"
@@ -20,15 +20,12 @@ export function SiteFoot({ email, links }: SiteFootProps) {
         flexWrap: "wrap",
         gap: 2,
         fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-        fontSize: 16,
+        fontSize: 12,
         letterSpacing: "0.12em",
         textTransform: "uppercase",
-        color: "#6a7a6f",
+        color: "text.secondary",
       }}
     >
-      <Link href={`mailto:${email}`} sx={{ color: "inherit", textDecoration: "none", "&:hover": { color: "accent.acid" } }}>
-        {email}
-      </Link>
       <Box sx={{ display: "flex", gap: 1.5 }}>
         {links.map((l, i) => (
           <Box component="span" key={l.label} sx={{ display: "inline-flex", gap: 1.5 }}>
@@ -44,6 +41,14 @@ export function SiteFoot({ email, links }: SiteFootProps) {
           </Box>
         ))}
       </Box>
+      <Link
+        href={license.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{ color: "inherit", textDecoration: "none", "&:hover": { color: "accent.acid" } }}
+      >
+        {license.label} ↗
+      </Link>
     </Box>
   );
 }

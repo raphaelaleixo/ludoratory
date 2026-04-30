@@ -37,7 +37,7 @@ export default function HomePage() {
         <LabOriginals games={originalGames} />
         <ApparatusSection apparatus={content.apparatus} />
         <HouseRules rules={content.houseRules} />
-        <SiteFoot email={content.footer.email} links={content.footer.links} />
+        <SiteFoot links={content.footer.links} license={content.footer.license} />
       </Box>
     </Box>
   );
