@@ -13,7 +13,7 @@ export function SectionLabel({ children }: SectionLabelProps) {
         fontSize: 12,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
-        color: "text.secondary",
+        color: "text.primary",
         margin: "36px 0 28px",
         display: "flex",
         alignItems: "center",
