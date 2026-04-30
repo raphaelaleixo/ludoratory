@@ -42,7 +42,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             background: "tape.orange",
             color: "#2a1410",
             fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            fontSize: 10,
+            fontSize: 14,
             fontWeight: 700,
             letterSpacing: "0.16em",
             textTransform: "uppercase",
@@ -62,7 +62,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
               component="span"
               sx={{
                 fontFamily: '"Space Grotesk", "Inter", sans-serif',
-                fontSize: 12,
+                fontSize: 14,
                 fontWeight: 500,
                 color: "accent.acid",
                 ml: 1.25,
@@ -75,13 +75,13 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
               v{apparatus.version}
             </Box>
           </Typography>
-          <Typography sx={{ fontSize: 13.5, lineHeight: 1.55, color: "text.secondary", maxWidth: 480, m: 0, mb: 1.5 }}>
+          <Typography sx={{ fontSize: 14, lineHeight: 1.55, color: "text.secondary", maxWidth: 480, m: 0, mb: 1.5 }}>
             {apparatus.description}
           </Typography>
           <Box
             sx={{
               fontFamily: '"Space Grotesk", "Inter", sans-serif',
-              fontSize: 11.5,
+              fontSize: 14,
               color: "accent.acid",
               background: "#060a08",
               border: "1px solid #1d2a23",
@@ -101,7 +101,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             gap: 1,
             alignItems: { xs: "flex-start", md: "flex-end" },
             fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            fontSize: 10.5,
+            fontSize: 14,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             position: "relative",
@@ -123,7 +123,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
           >
             docs ↗
           </Link>
-          <Box component="span" sx={{ color: "#6a7a6f", fontSize: 9 }}>
+          <Box component="span" sx={{ color: "#6a7a6f", fontSize: 14 }}>
             {apparatus.license} licensed
           </Box>
         </Box>
@@ -137,7 +137,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
     <Box
       sx={{
         fontFamily: '"Space Grotesk", "Inter", sans-serif',
-        fontSize: 10,
+        fontSize: 14,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "text.disabled",

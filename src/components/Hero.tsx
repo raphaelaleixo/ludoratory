@@ -52,7 +52,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
           justifyContent: "space-between",
           alignItems: "center",
           fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          fontSize: "11px",
+          fontSize: "14px",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           color: "text.disabled",

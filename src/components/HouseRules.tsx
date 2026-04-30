@@ -28,7 +28,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
             background: "tape.yellow",
             color: "#2a2010",
             fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            fontSize: 10,
+            fontSize: 14,
             fontWeight: 700,
             letterSpacing: "0.16em",
             textTransform: "uppercase",
@@ -54,7 +54,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
               <Box
                 sx={{
                   fontFamily: '"Space Grotesk", "Inter", sans-serif',
-                  fontSize: 10,
+                  fontSize: 14,
                   fontWeight: 600,
                   color: "accent.acid",
                   border: "1px solid #2a4a3a",
@@ -75,7 +75,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
                 >
                   {r.title}
                 </Box>
-                <Typography sx={{ fontSize: 12.5, lineHeight: 1.5, color: "text.disabled", m: 0 }}>
+                <Typography sx={{ fontSize: 14, lineHeight: 1.5, color: "text.disabled", m: 0 }}>
                   {r.description}
                 </Typography>
               </Box>
@@ -92,7 +92,7 @@ function SectionLabel({ children }: { children: ReactNode }) {
     <Box
       sx={{
         fontFamily: '"Space Grotesk", "Inter", sans-serif',
-        fontSize: 10,
+        fontSize: 14,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "text.disabled",

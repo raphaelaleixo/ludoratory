@@ -64,7 +64,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           background: tapeBg(game.tapeVariant),
           color: game.tapeVariant === "blue" ? "#0e1a30" : "#2a2010",
           fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          fontSize: 10,
+          fontSize: 14,
           fontWeight: 600,
           letterSpacing: "0.16em",
           textTransform: "uppercase",
@@ -111,11 +111,11 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           )}
         </Box>
         {game.inspiration && (
-          <Box sx={{ fontFamily: '"Space Grotesk", "Inter", sans-serif', fontSize: 10.5, color: "text.disabled", letterSpacing: "0.04em" }}>
+          <Box sx={{ fontFamily: '"Space Grotesk", "Inter", sans-serif', fontSize: 14, color: "text.disabled", letterSpacing: "0.04em" }}>
             ↳ {game.inspiration}
           </Box>
         )}
-        <Typography sx={{ fontSize: 13.5, lineHeight: 1.5, color: "text.secondary", margin: "4px 0 12px" }}>
+        <Typography sx={{ fontSize: 14, lineHeight: 1.5, color: "text.secondary", margin: "4px 0 12px" }}>
           {game.description}
         </Typography>
 
@@ -130,7 +130,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
             paddingTop: 1.5,
             borderTop: "1px dashed #2a3a30",
             fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            fontSize: 10,
+            fontSize: 14,
             letterSpacing: "0.1em",
             textTransform: "uppercase",
             color: "text.disabled",

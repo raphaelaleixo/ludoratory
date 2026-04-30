@@ -20,7 +20,7 @@ export function SiteFoot({ email, links }: SiteFootProps) {
         flexWrap: "wrap",
         gap: 2,
         fontFamily: '"Space Grotesk", "Inter", sans-serif',
-        fontSize: 11,
+        fontSize: 14,
         letterSpacing: "0.12em",
         textTransform: "uppercase",
         color: "#6a7a6f",
