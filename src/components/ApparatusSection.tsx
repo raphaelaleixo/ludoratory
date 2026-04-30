@@ -137,10 +137,10 @@ function SectionLabel({ children }: { children: ReactNode }) {
     <Box
       sx={{
         fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-        fontSize: 16,
+        fontSize: 12,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
-        color: "text.disabled",
+        color: "text.secondary",
         margin: "36px 0 28px",
         display: "flex",
         alignItems: "center",
