@@ -7,7 +7,6 @@ import { LabOriginals } from "../components/LabOriginals";
 import { ApparatusSection } from "../components/ApparatusSection";
 import { HouseRules } from "../components/HouseRules";
 import { SiteFoot } from "../components/SiteFoot";
-import { Smoke } from "../components/effects/Smoke";
 
 const content = siteContent as SiteContent;
 const adaptedGames = content.games.filter((g) => g.status !== "original");
@@ -36,7 +35,6 @@ export default function HomePage() {
           border: "1px solid #1d251f",
         }}
       >
-        <Smoke />
         <Hero site={content.site} specimenCount={content.games.length} />
         <SpecimenCatalog games={adaptedGames} />
         <LabOriginals games={originalGames} />
