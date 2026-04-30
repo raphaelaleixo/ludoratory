@@ -52,7 +52,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             zIndex: 2,
           }}
         >
-          Tool · Open Source
+          Tool · OSS
         </Box>
 
         <Box sx={{ position: "relative" }}>

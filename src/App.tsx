@@ -1,3 +1,43 @@
+import { lazy, Suspense } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+  type RouteObject,
+} from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+import theme from "./theme/theme";
+import { MdxProvider } from "./components/MdxProvider";
+
+const HomePage = lazy(() => import("./pages/HomePage"));
+
+const routes: RouteObject[] = [
+  { path: "/", element: <HomePage /> },
+  { path: "*", element: <Navigate to="/" replace /> },
+];
+
+const router = createBrowserRouter(routes);
+
+function RouteFallback() {
+  return (
+    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+      <CircularProgress />
+    </Box>
+  );
+}
+
 export default function App() {
-  return <div>Ludoratory — placeholder</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <MdxProvider>
+        <Suspense fallback={<RouteFallback />}>
+          <RouterProvider router={router} />
+        </Suspense>
+      </MdxProvider>
+    </ThemeProvider>
+  );
 }
