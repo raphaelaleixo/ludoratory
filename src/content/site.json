@@ -8,10 +8,10 @@
     "thesis": "A lab for ideas, a playground for play. Ludoratory turns board game concepts into interactive experiences—rebuilt, reimagined, and ready to be played. Some build on existing games, others start from scratch, all exploring how mechanics, theme, and technology create new ways to play online."
   },
   "sections": [
-    { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "~ No installs, just a shared screen and your phones. ~" },
-    { "id": "labOriginals",    "label": "Lab Originals",    "note": "~ home-grown experiments — no rulebook to copy from. ~" },
-    { "id": "apparatus",       "label": "The Apparatus",    "note": "~ powering every specimen above ~" },
-    { "id": "houseRules",      "label": "House Rules",      "note": "~ how this place actually works ↓ ~" }
+    { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "ϟ no installs. shared screen + phones" },
+    { "id": "labOriginals",    "label": "Lab Originals",    "note": "✶ home-grown experiments. original rules" },
+    { "id": "apparatus",       "label": "The Apparatus",    "note": "⌬ powering every specimen above" },
+    { "id": "houseRules",      "label": "House Rules",      "note": "⚖ how this place actually works" }
   ],
   "games": [
     {
@@ -40,7 +40,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/colorlition",
       "ogImage": "/og/colorlition.png",
       "tapeVariant": "cream",
-      "note": "push your luck!"
+      "note": "push your luck"
     },
     {
       "id": "unmatched",
@@ -68,7 +68,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
       "ogImage": "/og/arcanepoker.png",
       "tapeVariant": "blue",
-      "note": "rule-bending poker"
+      "note": "rule-bending cards"
     }
   ],
   "apparatus": {
