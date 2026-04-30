@@ -1,3 +1,6 @@
+// vitest v4 moved the `test` field augmentation out of the root `vitest` package
+// and into `vitest/config` — that's why the reference here uses "vitest/config" while
+// tsconfig.node.json's `types` array uses "vitest". Both are needed.
 /// <reference types="vitest/config" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
