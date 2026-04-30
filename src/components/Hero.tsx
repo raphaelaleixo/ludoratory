@@ -57,7 +57,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
           fontSize: "12px",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
-          color: "text.disabled",
+          color: "text.secondary",
           mb: 3.5,
         }}
       >
@@ -83,7 +83,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
               {name.toUpperCase()}
             </Box>
           </Box>
-          <Box sx={{ display: "inline-flex", alignItems: "center", color: "text.disabled", fontWeight: 400 }}>
+          <Box sx={{ display: "inline-flex", alignItems: "center", color: "text.secondary", fontWeight: 400 }}>
             <Box component="span" sx={{ display: { xs: "none", md: "inline" }, mr: 0.75 }}>·</Box>
             <Link href={attribution.url} target="_blank" rel="noopener noreferrer" sx={{ color: "inherit", textDecoration: "none", "&:hover": { textDecoration: "underline" } }}>
               by {attribution.name} ↗
