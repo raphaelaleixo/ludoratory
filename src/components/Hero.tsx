@@ -23,7 +23,6 @@ function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) 
           WebkitBackgroundClip: "text",
           color: "transparent",
           textShadow: "0 0 24px rgba(163, 255, 92, 0.4)",
-          fontStyle: "italic",
           display: "inline-block",
         }}
       >
