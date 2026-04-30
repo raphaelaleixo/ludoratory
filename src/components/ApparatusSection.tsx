@@ -7,13 +7,14 @@ import { SectionNote } from "./SectionNote";
 
 interface ApparatusSectionProps {
   apparatus: Apparatus;
+  label: string;
   note?: string;
 }
 
-export function ApparatusSection({ apparatus, note }: ApparatusSectionProps) {
+export function ApparatusSection({ apparatus, label, note }: ApparatusSectionProps) {
   return (
     <Box sx={{ position: "relative" }}>
-      <SectionLabel>The Apparatus</SectionLabel>
+      <SectionLabel>{label}</SectionLabel>
       {note && <SectionNote text={note} color="amber" rotate={-1} />}
       <Box
         sx={{

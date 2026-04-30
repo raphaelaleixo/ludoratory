@@ -1,15 +1,10 @@
 export type GameStatus = "live" | "in-trials" | "original" | "brewing";
 export type TapeVariant = "yellow" | "cream" | "blue" | "orange";
-export type ScribbleColor = "acid" | "amber" | "magenta";
+export type ScribbleColor = "acid" | "amber" | "magenta" | "violet" | "gray";
 
 export interface Attribution {
   name: string;
   url: string;
-}
-
-export interface MarginScribbleData {
-  text: string;
-  color: ScribbleColor;
 }
 
 export interface Game {
@@ -55,18 +50,19 @@ export interface SiteCopy {
   headline: string[];
   headlineGlowToken: string;
   thesis: string;
-  marginScribbles: MarginScribbleData[];
 }
 
-export interface SectionNotes {
-  specimenCatalog: string;
-  labOriginals: string;
-  apparatus: string;
+export type SectionId = "specimenCatalog" | "labOriginals" | "apparatus" | "houseRules";
+
+export interface Section {
+  id: SectionId;
+  label: string;
+  note?: string;
 }
 
 export interface SiteContent {
   site: SiteCopy;
-  sectionNotes: SectionNotes;
+  sections: Section[];
   games: Game[];
   apparatus: Apparatus;
   houseRules: HouseRule[];

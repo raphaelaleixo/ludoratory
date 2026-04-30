@@ -139,7 +139,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           )}
         </Box>
         {game.inspiration && (
-          <Box sx={{ fontFamily: '"Space Grotesk", "DM Sans", sans-serif', fontSize: 16, color: "text.disabled", letterSpacing: "0.04em" }}>
+          <Box sx={{ fontFamily: '"Space Grotesk", "DM Sans", sans-serif', fontSize: 12, color: "text.disabled", letterSpacing: "0.04em" }}>
             ↳ {game.inspiration}
           </Box>
         )}

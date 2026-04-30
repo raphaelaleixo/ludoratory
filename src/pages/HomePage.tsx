@@ -1,6 +1,6 @@
 import Box from "@mui/material/Box";
 import siteContent from "../content/site.json";
-import type { SiteContent } from "../types";
+import type { SiteContent, Section, SectionId } from "../types";
 import { Hero } from "../components/Hero";
 import { SpecimenCatalog } from "../components/SpecimenCatalog";
 import { LabOriginals } from "../components/LabOriginals";
@@ -11,6 +11,10 @@ import { SiteFoot } from "../components/SiteFoot";
 const content = siteContent as SiteContent;
 const adaptedGames = content.games.filter((g) => g.status !== "original");
 const originalGames = content.games.filter((g) => g.status === "original");
+
+const sectionsById = Object.fromEntries(
+  content.sections.map((s) => [s.id, s]),
+) as Record<SectionId, Section>;
 
 export default function HomePage() {
   return (
@@ -33,10 +37,26 @@ export default function HomePage() {
         }}
       >
         <Hero site={content.site} specimenCount={content.games.length} />
-        <SpecimenCatalog games={adaptedGames} note={content.sectionNotes.specimenCatalog} />
-        <LabOriginals games={originalGames} note={content.sectionNotes.labOriginals} />
-        <ApparatusSection apparatus={content.apparatus} note={content.sectionNotes.apparatus} />
-        <HouseRules rules={content.houseRules} />
+        <SpecimenCatalog
+          games={adaptedGames}
+          label={sectionsById.specimenCatalog.label}
+          note={sectionsById.specimenCatalog.note}
+        />
+        <LabOriginals
+          games={originalGames}
+          label={sectionsById.labOriginals.label}
+          note={sectionsById.labOriginals.note}
+        />
+        <ApparatusSection
+          apparatus={content.apparatus}
+          label={sectionsById.apparatus.label}
+          note={sectionsById.apparatus.note}
+        />
+        <HouseRules
+          rules={content.houseRules}
+          label={sectionsById.houseRules.label}
+          note={sectionsById.houseRules.note}
+        />
         <SiteFoot links={content.footer.links} license={content.footer.license} />
       </Box>
     </Box>

@@ -11,6 +11,8 @@ const colorMap: Record<ScribbleColor, string> = {
   acid: "accent.acid",
   amber: "accent.amber",
   magenta: "accent.magenta",
+  violet: "accent.violet",
+  gray: "text.disabled",
 };
 
 export function SectionNote({ text, color = "magenta", rotate = -1.5 }: SectionNoteProps) {

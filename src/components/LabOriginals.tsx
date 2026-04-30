@@ -6,16 +6,17 @@ import { SectionNote } from "./SectionNote";
 
 interface LabOriginalsProps {
   games: Game[];
+  label: string;
   note?: string;
 }
 
-export function LabOriginals({ games, note }: LabOriginalsProps) {
+export function LabOriginals({ games, label, note }: LabOriginalsProps) {
   if (games.length === 0) return null;
 
   return (
     <Box sx={{ position: "relative" }}>
-      <SectionLabel>Lab Originals</SectionLabel>
-      {note && <SectionNote text={note} color="acid" rotate={-2} />}
+      <SectionLabel>{label}</SectionLabel>
+      {note && <SectionNote text={note} color="gray" rotate={-2} />}
       <Box
         sx={{
           display: "grid",

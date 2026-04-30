@@ -2,15 +2,19 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import type { HouseRule } from "../types";
 import { SectionLabel } from "./SectionLabel";
+import { SectionNote } from "./SectionNote";
 
 interface HouseRulesProps {
   rules: HouseRule[];
+  label: string;
+  note?: string;
 }
 
-export function HouseRules({ rules }: HouseRulesProps) {
+export function HouseRules({ rules, label, note }: HouseRulesProps) {
   return (
     <Box sx={{ position: "relative" }}>
-      <SectionLabel>House Rules</SectionLabel>
+      <SectionLabel>{label}</SectionLabel>
+      {note && <SectionNote text={note} color="violet" rotate={-1.25} />}
       <Box
         sx={{
           background: "surface.rules",
@@ -41,12 +45,9 @@ export function HouseRules({ rules }: HouseRulesProps) {
           Lab Notice
         </Box>
 
-        <Typography variant="h2" sx={{ fontSize: 26, m: 0, mb: 0.75, color: "text.primary" }}>
+        <Typography variant="h2" sx={{ fontSize: 26, m: 0, mb: 2.5, color: "text.primary" }}>
           The fine print, kept short.
         </Typography>
-        <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 24, lineHeight: 1, color: "text.disabled", maxWidth: 520, m: 0, mb: 2.5 }}>
-          how this place actually works ↓
-        </Box>
 
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: "16px 24px" }}>
           {rules.map((r) => (

@@ -6,13 +6,14 @@ import { SectionNote } from "./SectionNote";
 
 interface SpecimenCatalogProps {
   games: Game[];
+  label: string;
   note?: string;
 }
 
-export function SpecimenCatalog({ games, note }: SpecimenCatalogProps) {
+export function SpecimenCatalog({ games, label, note }: SpecimenCatalogProps) {
   return (
     <Box sx={{ position: "relative" }}>
-      <SectionLabel>Specimen Catalog</SectionLabel>
+      <SectionLabel>{label}</SectionLabel>
       {note && <SectionNote text={note} color="magenta" rotate={-1.5} />}
       <Box
         sx={{

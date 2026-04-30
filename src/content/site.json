@@ -5,18 +5,14 @@
     "attribution": { "name": "Raphael Aleixo", "url": "https://aleixo.me" },
     "headline": ["From Experiment", "to Experience."],
     "headlineGlowToken": "Experience",
-    "thesis": "A lab for ideas, a playground for play. Ludoratory turns board game concepts into interactive experiences—rebuilt, reimagined, and ready to be played. Some build on existing games, others start from scratch, all exploring how mechanics, theme, and technology create new ways to play online.",
-    "marginScribbles": [
-      { "text": "unstable! ⚡", "color": "amber" },
-      { "text": "→ tested w/ 5 ppl ✓", "color": "magenta" },
-      { "text": "+ standoff brewing...", "color": "acid" }
-    ]
+    "thesis": "A lab for ideas, a playground for play. Ludoratory turns board game concepts into interactive experiences—rebuilt, reimagined, and ready to be played. Some build on existing games, others start from scratch, all exploring how mechanics, theme, and technology create new ways to play online."
   },
-  "sectionNotes": {
-    "specimenCatalog": "~ No installs, just a shared screen and your phones. ~",
-    "labOriginals": "~ home-grown experiments — no rulebook to copy from. ~",
-    "apparatus": "~ powering every specimen above ~"
-  },
+  "sections": [
+    { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "~ No installs, just a shared screen and your phones. ~" },
+    { "id": "labOriginals",    "label": "Lab Originals",    "note": "~ home-grown experiments — no rulebook to copy from. ~" },
+    { "id": "apparatus",       "label": "The Apparatus",    "note": "~ powering every specimen above ~" },
+    { "id": "houseRules",      "label": "House Rules",      "note": "~ how this place actually works ↓ ~" }
+  ],
   "games": [
     {
       "id": "krimi",
@@ -30,7 +26,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/krimi",
       "ogImage": "/og/krimi.png",
       "tapeVariant": "yellow",
-      "note": "best at 6+ ✓"
+      "note": "hidden roles"
     },
     {
       "id": "colorlition",
@@ -44,7 +40,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/colorlition",
       "ogImage": "/og/colorlition.png",
       "tapeVariant": "cream",
-      "note": "side-effects: shouting"
+      "note": "push your luck!"
     },
     {
       "id": "unmatched",
@@ -58,7 +54,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/react-unmatched",
       "ogImage": "/og/unmatched.png",
       "tapeVariant": "yellow",
-      "note": "10 min · play again"
+      "note": "co-op wordplay"
     },
     {
       "id": "arcanepoker",
@@ -72,7 +68,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
       "ogImage": "/og/arcanepoker.png",
       "tapeVariant": "blue",
-      "note": "still mutating ⚗︎"
+      "note": "rule-bending poker"
     }
   ],
   "apparatus": {
