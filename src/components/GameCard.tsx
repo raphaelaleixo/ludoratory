@@ -152,9 +152,10 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           sx={{
             mt: "auto",
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            gap: 1,
+            flexDirection: { xs: "column", md: "row" },
+            justifyContent: { xs: "flex-start", md: "space-between" },
+            alignItems: { xs: "flex-start", md: "center" },
+            gap: { xs: 1, md: 1 },
             paddingTop: 1.5,
             borderTop: "1px dashed #2a3a30",
             fontFamily: '"Space Grotesk", "DM Sans", sans-serif',

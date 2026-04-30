@@ -49,8 +49,10 @@ export function Hero({ site, specimenCount }: HeroProps) {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          flexDirection: { xs: "column", md: "row" },
+          justifyContent: { xs: "flex-start", md: "space-between" },
+          alignItems: { xs: "flex-start", md: "center" },
+          gap: { xs: 0.75, md: 0 },
           fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
           fontSize: "16px",
           letterSpacing: "0.14em",
@@ -59,21 +61,30 @@ export function Hero({ site, specimenCount }: HeroProps) {
           mb: 3.5,
         }}
       >
-        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
-          <Ludoratory size={20} />
-          <Box
-            component="span"
-            sx={{
-              fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-              fontWeight: 700,
-              fontSize: 16,
-              letterSpacing: "0.04em",
-            }}
-          >
-            {name.toUpperCase()}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            gap: { xs: 0.75, md: 1 },
+          }}
+        >
+          <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
+            <Ludoratory size={20} />
+            <Box
+              component="span"
+              sx={{
+                fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                fontWeight: 700,
+                fontSize: 16,
+                letterSpacing: "0.04em",
+              }}
+            >
+              {name.toUpperCase()}
+            </Box>
           </Box>
-          <Box component="span" sx={{ color: "text.disabled", fontWeight: 400, ml: 0.5 }}>
-            ·{" "}
+          <Box sx={{ display: "inline-flex", alignItems: "center", color: "text.disabled", fontWeight: 400 }}>
+            <Box component="span" sx={{ display: { xs: "none", md: "inline" }, mr: 0.75 }}>·</Box>
             <Link href={attribution.url} target="_blank" rel="noopener noreferrer" sx={{ color: "inherit", textDecoration: "none", "&:hover": { textDecoration: "underline" } }}>
               by {attribution.name} ↗
             </Link>
