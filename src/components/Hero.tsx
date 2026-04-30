@@ -51,8 +51,8 @@ export function Hero({ site, specimenCount }: HeroProps) {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          fontSize: "14px",
+          fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+          fontSize: "16px",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           color: "text.disabled",
@@ -64,9 +64,9 @@ export function Hero({ site, specimenCount }: HeroProps) {
           <Box
             component="span"
             sx={{
-              fontFamily: '"Space Grotesk", "Inter", sans-serif',
+              fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
               fontWeight: 700,
-              fontSize: 14,
+              fontSize: 16,
               letterSpacing: "0.04em",
             }}
           >
@@ -96,7 +96,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
       </Typography>
 
       {/* thesis + warning */}
-      <Typography sx={{ fontSize: 14, lineHeight: 1.55, color: "text.secondary", maxWidth: 540, mb: 1 }}>
+      <Typography sx={{ fontSize: 16, lineHeight: 1.55, color: "text.secondary", maxWidth: 540, mb: 1 }}>
         {thesis}
       </Typography>
       <Box sx={{ fontFamily: '"Caveat", cursive', fontSize: 24, lineHeight: 1, color: "accent.magenta", transform: "rotate(-1.5deg)", display: "inline-block", mt: 0.75 }}>

@@ -33,8 +33,8 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        fontFamily: '"Space Grotesk", "Inter", sans-serif',
-        fontSize: 14,
+        fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+        fontSize: 16,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "text.disabled",

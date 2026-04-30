@@ -28,7 +28,7 @@ export default function HomePage() {
             "linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           color: "text.primary",
-          fontFamily: '"Inter", system-ui, sans-serif',
+          fontFamily: '"DM Sans", system-ui, sans-serif',
           position: "relative",
         }}
       >

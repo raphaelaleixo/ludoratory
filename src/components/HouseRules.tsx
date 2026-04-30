@@ -27,7 +27,7 @@ export function HouseRules({ rules }: HouseRulesProps) {
             right: 36,
             background: "tape.yellow",
             color: "#2a2010",
-            fontFamily: '"Space Grotesk", "Inter", sans-serif',
+            fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
             fontSize: 12,
             fontWeight: 700,
             letterSpacing: "0.16em",
@@ -53,8 +53,8 @@ export function HouseRules({ rules }: HouseRulesProps) {
             <Box key={r.number} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
               <Box
                 sx={{
-                  fontFamily: '"Space Grotesk", "Inter", sans-serif',
-                  fontSize: 14,
+                  fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                  fontSize: 16,
                   fontWeight: 600,
                   color: "accent.acid",
                   border: "1px solid #2a4a3a",
@@ -71,11 +71,11 @@ export function HouseRules({ rules }: HouseRulesProps) {
               <Box>
                 <Box
                   component="h4"
-                  sx={{ fontSize: 14, fontWeight: 700, color: "text.primary", m: 0, mb: 0.25, fontFamily: '"Inter", system-ui, sans-serif' }}
+                  sx={{ fontSize: 16, fontWeight: 700, color: "text.primary", m: 0, mb: 0.25, fontFamily: '"DM Sans", system-ui, sans-serif' }}
                 >
                   {r.title}
                 </Box>
-                <Typography sx={{ fontSize: 14, lineHeight: 1.5, color: "text.disabled", m: 0 }}>
+                <Typography sx={{ fontSize: 16, lineHeight: 1.5, color: "text.disabled", m: 0 }}>
                   {r.description}
                 </Typography>
               </Box>
@@ -91,8 +91,8 @@ function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <Box
       sx={{
-        fontFamily: '"Space Grotesk", "Inter", sans-serif',
-        fontSize: 14,
+        fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+        fontSize: 16,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "text.disabled",
