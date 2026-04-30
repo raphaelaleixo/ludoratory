@@ -1,0 +1,97 @@
+{
+  "site": {
+    "name": "Ludoratory",
+    "establishedRoman": "MMXXV",
+    "attribution": { "name": "Raphael Aleixo", "url": "https://aleixo.me" },
+    "headline": ["Analog games,", "extracted &", "re-grown for the web."],
+    "headlineGlowToken": "extracted",
+    "thesis": "A laboratory adapting board, card, and party games into multi-device experiences. Browser-native. Real-time. No install. Bring your own phones; we'll supply the chaos.",
+    "warning": "~ side effects may include excessive game-night planning ~",
+    "marginScribbles": [
+      { "text": "unstable! ⚡", "color": "amber" },
+      { "text": "→ tested w/ 5 ppl ✓", "color": "magenta" },
+      { "text": "+ standoff brewing...", "color": "acid" }
+    ]
+  },
+  "games": [
+    {
+      "id": "krimi",
+      "specimen": "01",
+      "name": "Krimi",
+      "inspiration": "Deception: Murder in Hong Kong (Ho, 2014)",
+      "description": "Decode the forensic scientist's clues to unmask the hidden murderer. A social-deduction party game played on a shared screen, controlled from your phones.",
+      "players": "5–12",
+      "status": "live",
+      "url": "https://krimi.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/krimi",
+      "ogImage": "/og/krimi.png",
+      "tapeVariant": "yellow",
+      "note": null
+    },
+    {
+      "id": "colorlition",
+      "specimen": "02",
+      "name": "Colorlition",
+      "inspiration": "Coloretto (Schacht, 2003)",
+      "description": "A real-time card-drafting party game where political coalitions are built one demand at a time. Don't let your top three colors flip-flop.",
+      "players": "3–5",
+      "status": "live",
+      "url": "https://colorlition.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/colorlition",
+      "ogImage": "/og/colorlition.png",
+      "tapeVariant": "cream",
+      "note": null
+    },
+    {
+      "id": "unmatched",
+      "specimen": "03",
+      "name": "Unmatched",
+      "inspiration": "Just One (Repos Production, 2018)",
+      "description": "Zero duplicates. Total cooperation. A web-based word game where great minds mustn't think alike. Friends, a shared screen, your phones.",
+      "players": "3–10",
+      "status": "live",
+      "url": "https://unmatched.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/react-unmatched",
+      "ogImage": "/og/unmatched.png",
+      "tapeVariant": "yellow",
+      "note": null
+    },
+    {
+      "id": "arcanepoker",
+      "specimen": "04",
+      "name": "Arcane Poker",
+      "inspiration": "original · single-player experiment",
+      "description": "What happens when the Tarot rewrites the rules of Poker? A tactical evolution where every Page drawn bends the board. Your fate is on the table.",
+      "players": "solo",
+      "status": "original",
+      "url": "https://arcanepoker.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
+      "ogImage": "/og/arcanepoker.png",
+      "tapeVariant": "blue",
+      "note": null
+    }
+  ],
+  "apparatus": {
+    "name": "react-gameroom",
+    "version": "0.11",
+    "description": "The reusable lobby system every Ludoratory game runs on. A stateless React component library handling player slots, room state, QR-code joining, and URL routing. Bring your own state, bring your own game.",
+    "installSnippet": "npm install react-gameroom",
+    "repoUrl": "https://github.com/raphaelaleixo/react-gameroom",
+    "docsUrl": "https://raphaelaleixo.github.io/react-gameroom/",
+    "license": "MIT"
+  },
+  "houseRules": [
+    { "number": "01", "title": "Free to play, always.",      "description": "No paywalls, no subscriptions, no premium tiers. You and your friends, a URL, and a phone each." },
+    { "number": "02", "title": "Open source, every game.",   "description": "Each game's code lives on GitHub. Read it, fork it, run your own copy. Mistakes welcome, PRs even more so." },
+    { "number": "03", "title": "No analytics, no trackers.", "description": "No third-party scripts watching what you do here. Your game-night is yours. We don't even know how many people played." },
+    { "number": "04", "title": "The database wipes daily.",  "description": "Every room evaporates at midnight UTC. There is no archive, no leaderboard server, no record. Play, then disappear." }
+  ],
+  "footer": {
+    "email": "raphael@ludoratory.com",
+    "links": [
+      { "label": "github",    "url": "https://github.com/raphaelaleixo" },
+      { "label": "bsky",      "url": "https://bsky.app/profile/aleixo.me" },
+      { "label": "portfolio", "url": "https://aleixo.me" }
+    ]
+  }
+}
