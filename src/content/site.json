@@ -26,7 +26,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/krimi",
       "ogImage": "/og/krimi.png",
       "tapeVariant": "yellow",
-      "note": null
+      "note": "best at 6+ ✓"
     },
     {
       "id": "colorlition",
@@ -40,7 +40,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/colorlition",
       "ogImage": "/og/colorlition.png",
       "tapeVariant": "cream",
-      "note": null
+      "note": "side-effects: shouting"
     },
     {
       "id": "unmatched",
@@ -54,7 +54,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/react-unmatched",
       "ogImage": "/og/unmatched.png",
       "tapeVariant": "yellow",
-      "note": null
+      "note": "10 min · play again"
     },
     {
       "id": "arcanepoker",
@@ -68,7 +68,7 @@
       "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
       "ogImage": "/og/arcanepoker.png",
       "tapeVariant": "blue",
-      "note": null
+      "note": "still mutating ⚗︎"
     }
   ],
   "apparatus": {

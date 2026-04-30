@@ -2,7 +2,6 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import type { Game, TapeVariant } from "../types";
-import { MarginScribble } from "./MarginScribble";
 
 interface GameCardProps {
   game: Game;
@@ -12,6 +11,8 @@ interface GameCardProps {
 
 const tapeRotation = [-3, 3, -2, 2.5];
 const tapePosition: Array<"left" | "right"> = ["left", "right", "left", "right"];
+
+const noteColors = ["#a3ff5c", "#ffd166", "#ff9bbd"]; // acid, amber, magenta — cycles per index
 
 const statusStyles: Record<Game["status"], { color: string; border: string; label: string }> = {
   "live":      { color: "#8aa091", border: "#2a3a30", label: "● live" },
@@ -88,9 +89,27 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
 
       {/* body */}
       <Box sx={{ padding: "18px 20px", display: "flex", flexDirection: "column", gap: 1, flex: 1 }}>
-        <Typography variant="h3" sx={{ fontSize: 26, lineHeight: 1, color: "text.primary", m: 0 }}>
-          {game.name}
-        </Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 1.5 }}>
+          <Typography variant="h3" sx={{ fontSize: 26, lineHeight: 1, color: "text.primary", m: 0 }}>
+            {game.name}
+          </Typography>
+          {game.note && (
+            <Box
+              aria-hidden="true"
+              sx={{
+                fontFamily: '"Caveat", cursive',
+                color: noteColors[index % noteColors.length],
+                fontSize: 18,
+                lineHeight: 1.05,
+                whiteSpace: "nowrap",
+                transform: `rotate(${index % 2 === 0 ? -3 : 3}deg)`,
+                flexShrink: 0,
+              }}
+            >
+              {game.note}
+            </Box>
+          )}
+        </Box>
         {game.inspiration && (
           <Box sx={{ fontFamily: '"IBM Plex Mono", monospace', fontSize: 10.5, color: "text.disabled", letterSpacing: "0.04em" }}>
             ↳ {game.inspiration}
@@ -140,21 +159,6 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           </Box>
         </Box>
       </Box>
-
-      {/* per-card scribble */}
-      {game.note && (
-        <MarginScribble
-          text={game.note}
-          color={(["acid", "amber", "magenta"] as const)[index % 3]}
-          rotate={index % 2 === 0 ? 6 : -5}
-          fontSize={19}
-          sx={{
-            top: "30%",
-            [index % 2 === 0 ? "right" : "left"]: -56,
-            display: { xs: "block", md: "block" },
-          }}
-        />
-      )}
     </Box>
   );
 }
