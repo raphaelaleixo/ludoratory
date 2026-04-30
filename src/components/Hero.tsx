@@ -70,7 +70,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
           }}
         >
           <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
-            <Ludoratory size={20} />
+            <Ludoratory size={28} />
             <Box
               component="span"
               sx={{
