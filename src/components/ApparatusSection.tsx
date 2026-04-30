@@ -111,7 +111,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             href={apparatus.repoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "accent.acid", textDecoration: "none", fontWeight: 600, border: "1px solid #2a4a3a", borderRadius: "4px", padding: "6px 12px" }}
+            sx={{ color: "accent.acid", fontSize: 14, textDecoration: "none", fontWeight: 600, border: "1px solid #2a4a3a", borderRadius: "4px", padding: "6px 12px" }}
           >
             github ↗
           </Link>
@@ -119,11 +119,11 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             href={apparatus.docsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            sx={{ color: "accent.amber", textDecoration: "none", fontWeight: 600, border: "1px solid #4a3a18", borderRadius: "4px", padding: "6px 12px" }}
+            sx={{ color: "accent.amber", fontSize: 14, textDecoration: "none", fontWeight: 600, border: "1px solid #4a3a18", borderRadius: "4px", padding: "6px 12px" }}
           >
             docs ↗
           </Link>
-          <Box component="span" sx={{ color: "#6a7a6f", fontSize: 16 }}>
+          <Box component="span" sx={{ color: "#6a7a6f", fontSize: 12 }}>
             {apparatus.license} licensed
           </Box>
         </Box>
