@@ -29,10 +29,7 @@ export default function HomePage() {
           backgroundSize: "28px 28px",
           color: "text.primary",
           fontFamily: '"Inter", system-ui, sans-serif',
-          borderRadius: "10px",
           position: "relative",
-          overflow: "hidden",
-          border: "1px solid #1d251f",
         }}
       >
         <Hero site={content.site} specimenCount={content.games.length} />
