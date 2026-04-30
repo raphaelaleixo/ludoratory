@@ -10,17 +10,13 @@ interface LabOriginalsProps {
 export function LabOriginals({ games }: LabOriginalsProps) {
   if (games.length === 0) return null;
 
-  const isSingle = games.length === 1;
-
   return (
     <Box sx={{ position: "relative" }}>
       <SectionLabel>Lab Originals</SectionLabel>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: isSingle ? "minmax(0, 1fr)" : { xs: "1fr", md: "1fr 1fr" },
-          maxWidth: isSingle ? 520 : "none",
-          mx: isSingle ? "auto" : 0,
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
           columnGap: { xs: 0, md: "56px" },
           rowGap: "28px",
         }}
