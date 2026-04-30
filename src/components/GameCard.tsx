@@ -77,15 +77,43 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
         Spec. №{game.specimen}
       </Box>
 
-      {/* image */}
-      <Box sx={{ aspectRatio: "1200 / 630", background: "#000", overflow: "hidden", borderRadius: "7px 7px 0 0" }}>
-        <Box
-          component="img"
-          src={game.ogImage}
-          alt={game.name}
-          sx={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-        />
-      </Box>
+      {/* image — clicking it opens the game */}
+      <Link
+        href={game.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        sx={{
+          display: "block",
+          aspectRatio: "1200 / 630",
+          background: "#000",
+          overflow: "hidden",
+          borderRadius: "7px 7px 0 0",
+          position: "relative",
+          "& img": {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+            transition: "transform 0.4s ease, filter 0.4s ease",
+          },
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, transparent 55%, rgba(163, 255, 92, 0.18))",
+            opacity: 0,
+            transition: "opacity 0.3s ease",
+            pointerEvents: "none",
+          },
+          "&:hover img": { transform: "scale(1.04)", filter: "brightness(1.08)" },
+          "&:hover::after": { opacity: 1 },
+          "@media (prefers-reduced-motion: reduce)": {
+            "&:hover img": { transform: "none" },
+          },
+        }}
+      >
+        <Box component="img" src={game.ogImage} alt={game.name} />
+      </Link>
 
       {/* body */}
       <Box sx={{ padding: "18px 20px", display: "flex", flexDirection: "column", gap: 1, flex: 1 }}>
@@ -150,11 +178,37 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
             </Box>
           </Box>
           <Box sx={{ display: "flex", gap: 1.5 }}>
-            <Link href={game.repoUrl} target="_blank" rel="noopener noreferrer" sx={{ color: "accent.magenta", textDecoration: "none", fontWeight: 600 }}>
-              code ↗
+            <Link
+              href={game.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "accent.magenta",
+                textDecoration: "none",
+                fontWeight: 600,
+                transition: "filter 0.2s ease",
+                "& .arrow": { display: "inline-block", transition: "transform 0.2s ease" },
+                "&:hover": { filter: "brightness(1.15)" },
+                "&:hover .arrow": { transform: "translate(2px, -2px)" },
+              }}
+            >
+              code <Box component="span" className="arrow">↗</Box>
             </Link>
-            <Link href={game.url} target="_blank" rel="noopener noreferrer" sx={{ color: "accent.acid", textDecoration: "none", fontWeight: 600 }}>
-              play ↗
+            <Link
+              href={game.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: "accent.acid",
+                textDecoration: "none",
+                fontWeight: 600,
+                transition: "filter 0.2s ease",
+                "& .arrow": { display: "inline-block", transition: "transform 0.2s ease" },
+                "&:hover": { filter: "brightness(1.15)" },
+                "&:hover .arrow": { transform: "translate(2px, -2px)" },
+              }}
+            >
+              play <Box component="span" className="arrow">↗</Box>
             </Link>
           </Box>
         </Box>
