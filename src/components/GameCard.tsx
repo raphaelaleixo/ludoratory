@@ -64,7 +64,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           background: tapeBg(game.tapeVariant),
           color: game.tapeVariant === "blue" ? "#0e1a30" : "#2a2010",
           fontFamily: '"Space Grotesk", "Inter", sans-serif',
-          fontSize: 14,
+          fontSize: 12,
           fontWeight: 600,
           letterSpacing: "0.16em",
           textTransform: "uppercase",

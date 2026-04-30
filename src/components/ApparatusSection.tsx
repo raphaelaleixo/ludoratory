@@ -42,7 +42,7 @@ export function ApparatusSection({ apparatus }: ApparatusSectionProps) {
             background: "tape.orange",
             color: "#2a1410",
             fontFamily: '"Space Grotesk", "Inter", sans-serif',
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: 700,
             letterSpacing: "0.16em",
             textTransform: "uppercase",
