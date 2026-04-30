@@ -17,8 +17,8 @@ function renderHome() {
 describe("HomePage", () => {
   it("renders the headline tokens", () => {
     renderHome();
-    expect(screen.getByText(/Analog games/i)).toBeInTheDocument();
-    expect(screen.getByText("re-grown for the web.")).toBeInTheDocument();
+    expect(screen.getByText(/From Experiment/i)).toBeInTheDocument();
+    expect(screen.getByText("Experience")).toBeInTheDocument();
   });
 
   it("renders all four games by name", () => {
