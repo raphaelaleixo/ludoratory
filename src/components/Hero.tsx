@@ -36,7 +36,7 @@ function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) 
 }
 
 export function Hero({ site, specimenCount }: HeroProps) {
-  const { name, establishedRoman, attribution, headline, headlineGlowToken, thesis, warning, marginScribbles } = site;
+  const { name, attribution, headline, headlineGlowToken, thesis, warning, marginScribbles } = site;
   const scribblePositions = [
     { top: 95, right: 48, rotate: 7, fontSize: 24 },
     { top: 165, right: 24, rotate: -3, fontSize: 24 },
@@ -79,7 +79,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
             </Link>
           </Box>
         </Box>
-        <Box>EST. {establishedRoman} · SPECIMENS: {String(specimenCount).padStart(2, "0")} · STATUS: ACTIVE</Box>
+        <Box>SPECIMENS: {String(specimenCount).padStart(2, "0")}</Box>
       </Box>
 
       {/* headline */}
