@@ -76,7 +76,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
               sx={{
                 fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
                 fontWeight: 700,
-                fontSize: 16,
+                fontSize: 24,
                 letterSpacing: "0.04em",
               }}
             >
