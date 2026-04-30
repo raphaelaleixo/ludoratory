@@ -31,7 +31,7 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     mode: "dark",
-    background: { default: "#0c100e", paper: "#11171a" },
+    background: { default: "#0a140a", paper: "#030603" },
     text: { primary: "#efe9d8", secondary: "#c4c0b0", disabled: "#8aa091" },
     accent: {
       acid: "#a3ff5c",
@@ -40,10 +40,10 @@ const theme = createTheme({
       violet: "#c8a3ff",
     },
     surface: {
-      base: "#0c100e",
-      tile: "#11171a",
-      apparatus: "#0a1614",
-      rules: "#0e1a18",
+      base: "#0a140a",
+      tile: "#030603",
+      apparatus: "#020502",
+      rules: "#040704",
     },
     tape: {
       yellow: "rgba(245, 222, 130, 0.94)",

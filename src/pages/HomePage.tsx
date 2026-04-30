@@ -7,6 +7,7 @@ import { LabOriginals } from "../components/LabOriginals";
 import { ApparatusSection } from "../components/ApparatusSection";
 import { HouseRules } from "../components/HouseRules";
 import { SiteFoot } from "../components/SiteFoot";
+// import { Smoke } from "../components/effects/Smoke";
 
 const content = siteContent as SiteContent;
 const adaptedGames = content.games.filter((g) => g.status !== "original");
@@ -18,7 +19,7 @@ const sectionsById = Object.fromEntries(
 
 export default function HomePage() {
   return (
-    <Box sx={{ minHeight: "100vh", background: "surface.base", py: { xs: 3, md: 5 }, px: { xs: 2, md: 4 } }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "surface.base", py: { xs: 3, md: 5 }, px: { xs: 2, md: 4 } }}>
       <Box
         sx={{
           maxWidth: 1100,
@@ -26,7 +27,7 @@ export default function HomePage() {
           padding: { xs: "24px", md: "36px 38px 44px" },
           background:
             "radial-gradient(ellipse at 20% 0%, rgba(163, 255, 92, 0.10), transparent 50%), " +
-            "radial-gradient(ellipse at 90% 60%, rgba(255, 77, 141, 0.10), transparent 50%), #0c100e",
+            "radial-gradient(ellipse at 90% 60%, rgba(255, 77, 141, 0.10), transparent 50%), #0a140a",
           backgroundImage:
             "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), " +
             "linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
@@ -59,6 +60,7 @@ export default function HomePage() {
         />
         <SiteFoot links={content.footer.links} license={content.footer.license} />
       </Box>
+      {/* <Smoke /> */}
     </Box>
   );
 }

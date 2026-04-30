@@ -18,7 +18,7 @@ export function ApparatusSection({ apparatus, label, note }: ApparatusSectionPro
       {note && <SectionNote text={note} color="amber" rotate={-1} />}
       <Box
         sx={{
-          background: "surface.apparatus",
+          bgcolor: "surface.apparatus",
           border: "1px solid #1d3a2f",
           borderRadius: "8px",
           padding: "24px 28px",
@@ -43,7 +43,7 @@ export function ApparatusSection({ apparatus, label, note }: ApparatusSectionPro
             position: "absolute",
             top: -10,
             left: 32,
-            background: "tape.orange",
+            bgcolor: "tape.orange",
             color: "#2a1410",
             fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
             fontSize: 12,

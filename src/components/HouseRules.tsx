@@ -17,7 +17,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
       {note && <SectionNote text={note} color="violet" rotate={-1.25} />}
       <Box
         sx={{
-          background: "surface.rules",
+          bgcolor: "surface.rules",
           border: "1px solid #2a3a30",
           borderRadius: "8px",
           padding: "28px 30px 24px",
@@ -29,7 +29,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
             position: "absolute",
             top: -10,
             right: 36,
-            background: "tape.yellow",
+            bgcolor: "tape.yellow",
             color: "#2a2010",
             fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
             fontSize: 12,

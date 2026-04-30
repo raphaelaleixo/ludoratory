@@ -14,13 +14,6 @@ const tapePosition: Array<"left" | "right"> = ["left", "right", "left", "right"]
 
 const noteColors = ["#a3ff5c", "#ffd166", "#ff9bbd"]; // acid, amber, magenta — cycles per index
 
-const statusStyles: Record<Game["status"], { color: string; border: string; label: string }> = {
-  "live":      { color: "#c4c0b0", border: "#3a4a40", label: "● live" },
-  "in-trials": { color: "#ffd166", border: "#4a3a18", label: "◐ in trials" },
-  "original":  { color: "#c8a3ff", border: "#3a2a4a", label: "◆ original" },
-  "brewing":   { color: "#c4c0b0", border: "#3a4a40", label: "○ brewing" },
-};
-
 function tapeBg(variant: TapeVariant): string {
   return {
     yellow: "rgba(245, 222, 130, 0.94)",
@@ -31,7 +24,6 @@ function tapeBg(variant: TapeVariant): string {
 }
 
 export function GameCard({ game, index = 0 }: GameCardProps) {
-  const status = statusStyles[game.status];
   const tapeRot = tapeRotation[index % tapeRotation.length];
   const tapeSide = tapePosition[index % tapePosition.length];
 
@@ -39,7 +31,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
     <Box
       sx={{
         position: "relative",
-        background: "surface.tile",
+        bgcolor: "surface.tile",
         borderRadius: "8px",
         overflow: "visible",
         boxShadow: "0 12px 32px rgba(0,0,0,0.45)",
@@ -166,17 +158,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           }}
         >
           <Box sx={{ display: "flex", gap: 1.25, alignItems: "center" }}>
-            <Box component="span">{game.players} players</Box>
-            <Box
-              sx={{
-                border: `1px solid ${status.border}`,
-                borderRadius: "99px",
-                padding: "2px 8px",
-                color: status.color,
-              }}
-            >
-              {status.label}
-            </Box>
+            <Box component="span">{game.players}</Box>
           </Box>
           <Box sx={{ display: "flex", gap: 1.5 }}>
             <Link
