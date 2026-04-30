@@ -54,7 +54,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
           alignItems: { xs: "flex-start", md: "center" },
           gap: { xs: 0.75, md: 0 },
           fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-          fontSize: "16px",
+          fontSize: "12px",
           letterSpacing: "0.14em",
           textTransform: "uppercase",
           color: "text.disabled",
@@ -76,7 +76,7 @@ export function Hero({ site, specimenCount }: HeroProps) {
               sx={{
                 fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
                 fontWeight: 700,
-                fontSize: 24,
+                fontSize: 18,
                 letterSpacing: "0.04em",
               }}
             >
