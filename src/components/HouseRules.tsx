@@ -18,7 +18,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
       <Box
         sx={{
           bgcolor: "surface.rules",
-          border: "1px solid #2a3a30",
+          border: "1px solid #2a3a3a",
           borderRadius: "8px",
           padding: "28px 30px 24px",
           position: "relative",
@@ -45,7 +45,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
           Lab Notice
         </Box>
 
-        <Typography variant="h2" sx={{ fontSize: 26, m: 0, mb: 2.5, color: "text.primary" }}>
+        <Typography variant="h2" component="h3" sx={{ fontSize: 26, m: 0, mb: 2.5, color: "text.primary" }}>
           The fine print, kept short.
         </Typography>
 
@@ -58,7 +58,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
                   fontSize: 16,
                   fontWeight: 600,
                   color: "accent.acid",
-                  border: "1px solid #2a4a3a",
+                  border: "1px solid #2a4a44",
                   borderRadius: "4px",
                   padding: "2px 6px",
                   minWidth: 26,

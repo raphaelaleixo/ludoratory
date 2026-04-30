@@ -31,19 +31,19 @@ declare module "@mui/material/styles" {
 const theme = createTheme({
   palette: {
     mode: "dark",
-    background: { default: "#0a140a", paper: "#030603" },
-    text: { primary: "#efe9d8", secondary: "#c4c0b0", disabled: "#8aa091" },
+    background: { default: "#0a1414", paper: "#020606" },
+    text: { primary: "#efe9d8", secondary: "#c4c0b0", disabled: "#8aa1a1" },
     accent: {
-      acid: "#a3ff5c",
+      acid: "#7fffd4",
       magenta: "#ff9bbd",
       amber: "#ffd166",
       violet: "#c8a3ff",
     },
     surface: {
-      base: "#0a140a",
-      tile: "#030603",
-      apparatus: "#020502",
-      rules: "#040704",
+      base: "#0a1414",
+      tile: "#020606",
+      apparatus: "#010505",
+      rules: "#030607",
     },
     tape: {
       yellow: "rgba(245, 222, 130, 0.94)",
@@ -59,6 +59,19 @@ const theme = createTheme({
     h3: { fontFamily: '"Space Grotesk", "DM Sans", sans-serif', fontWeight: 700, letterSpacing: "-0.02em" },
     body1: { fontSize: "16px", lineHeight: 1.55 },
     button: { textTransform: "none", fontWeight: 600 },
+  },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          "&:focus-visible": {
+            outline: `2px solid ${theme.palette.accent.acid}`,
+            outlineOffset: "3px",
+            borderRadius: "2px",
+          },
+        }),
+      },
+    },
   },
 });
 

@@ -14,7 +14,7 @@ export function SiteFoot({ links, license }: SiteFootProps) {
       sx={{
         marginTop: "36px",
         paddingTop: "20px",
-        borderTop: "1px dashed #2a3a30",
+        borderTop: "1px dashed #2a3a3a",
         display: "flex",
         justifyContent: "space-between",
         flexWrap: "wrap",
@@ -36,7 +36,7 @@ export function SiteFoot({ links, license }: SiteFootProps) {
               rel="noopener noreferrer"
               sx={{ color: "inherit", textDecoration: "none", "&:hover": { color: "accent.acid" } }}
             >
-              {l.label}
+              {l.label} ↗
             </Link>
           </Box>
         ))}

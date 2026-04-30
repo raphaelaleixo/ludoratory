@@ -12,7 +12,7 @@ interface GameCardProps {
 const tapeRotation = [-3, 3, -2, 2.5];
 const tapePosition: Array<"left" | "right"> = ["left", "right", "left", "right"];
 
-const noteColors = ["#a3ff5c", "#ffd166", "#ff9bbd"]; // acid, amber, magenta — cycles per index
+const noteColors = ["#7fffd4", "#ffd166", "#ff9bbd"]; // acid, amber, magenta — cycles per index
 
 function tapeBg(variant: TapeVariant): string {
   return {
@@ -35,7 +35,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
         borderRadius: "8px",
         overflow: "visible",
         boxShadow: "0 12px 32px rgba(0,0,0,0.45)",
-        border: "1px solid #1f2a23",
+        border: "1px solid #1f2a2a",
         display: "flex",
         flexDirection: "column",
         transform: `rotate(${(index % 2 === 0 ? -1 : 1) * (0.7 + (index * 0.1))}deg)`,
@@ -92,7 +92,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
             content: '""',
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, transparent 55%, rgba(163, 255, 92, 0.18))",
+            background: "linear-gradient(180deg, transparent 55%, rgba(127, 255, 212, 0.18))",
             opacity: 0,
             transition: "opacity 0.3s ease",
             pointerEvents: "none",
@@ -149,7 +149,7 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
             alignItems: { xs: "flex-start", lg: "center" },
             gap: 1,
             paddingTop: 1.5,
-            borderTop: "1px dashed #2a3a30",
+            borderTop: "1px dashed #2a3a3a",
             fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
             fontSize: 12,
             letterSpacing: "0.1em",

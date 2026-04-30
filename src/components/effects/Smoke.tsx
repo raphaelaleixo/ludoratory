@@ -13,10 +13,10 @@ interface PuffParams {
 }
 
 const PUFF_PARAMS: PuffParams[] = [
-  { cycleDur: 14, riseDist: 240, ampX: 60, fxA: 6, fxB: 9,  baseOpacity: 0.95, phaseOffset: 0    },
-  { cycleDur: 18, riseDist: 280, ampX: 70, fxA: 7, fxB: 11, baseOpacity: 0.85, phaseOffset: 0.25 },
-  { cycleDur: 13, riseDist: 250, ampX: 55, fxA: 8, fxB: 13, baseOpacity: 0.95, phaseOffset: 0.5  },
-  { cycleDur: 16, riseDist: 300, ampX: 65, fxA: 6, fxB: 10, baseOpacity: 0.85, phaseOffset: 0.75 },
+  { cycleDur: 14, riseDist: 460, ampX: 60, fxA: 6, fxB: 9,  baseOpacity: 0.95, phaseOffset: 0    },
+  { cycleDur: 18, riseDist: 520, ampX: 70, fxA: 7, fxB: 11, baseOpacity: 0.85, phaseOffset: 0.25 },
+  { cycleDur: 13, riseDist: 480, ampX: 55, fxA: 8, fxB: 13, baseOpacity: 0.95, phaseOffset: 0.5  },
+  { cycleDur: 16, riseDist: 540, ampX: 65, fxA: 6, fxB: 10, baseOpacity: 0.85, phaseOffset: 0.75 },
 ];
 
 const scrollVanish = keyframes`
@@ -93,7 +93,7 @@ export function Smoke() {
           "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 75%, rgba(0,0,0,0.08) 90%, transparent 100%)",
         animation: `${scrollVanish} linear both`,
         animationTimeline: "scroll(root block)",
-        animationRange: "85% 100%",
+        animationRange: "0% 100%",
       }}
     >
       <Box
@@ -124,39 +124,29 @@ export function Smoke() {
           </filter>
 
           <radialGradient id="puff-acid" cx="50%" cy="60%" r="50%">
-            <stop offset="0%" stopColor="#a3ff5c" stopOpacity="0.9" />
-            <stop offset="55%" stopColor="#a3ff5c" stopOpacity="0.34" />
-            <stop offset="100%" stopColor="#a3ff5c" stopOpacity="0" />
+            <stop offset="0%" stopColor="#7fffd4" stopOpacity="0.9" />
+            <stop offset="55%" stopColor="#7fffd4" stopOpacity="0.34" />
+            <stop offset="100%" stopColor="#7fffd4" stopOpacity="0" />
           </radialGradient>
-          <radialGradient id="puff-magenta" cx="50%" cy="60%" r="50%">
-            <stop offset="0%" stopColor="#ff4d8d" stopOpacity="0.82" />
-            <stop offset="55%" stopColor="#ff4d8d" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#ff4d8d" stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="puff-amber" cx="50%" cy="60%" r="50%">
-            <stop offset="0%" stopColor="#ffd166" stopOpacity="0.78" />
-            <stop offset="55%" stopColor="#ffd166" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#ffd166" stopOpacity="0" />
-          </radialGradient>
-          <radialGradient id="puff-violet" cx="50%" cy="60%" r="50%">
-            <stop offset="0%" stopColor="#c8a3ff" stopOpacity="0.82" />
-            <stop offset="55%" stopColor="#c8a3ff" stopOpacity="0.32" />
-            <stop offset="100%" stopColor="#c8a3ff" stopOpacity="0" />
+          <radialGradient id="puff-gray" cx="50%" cy="60%" r="50%">
+            <stop offset="0%" stopColor="#b8c5cc" stopOpacity="0.82" />
+            <stop offset="55%" stopColor="#b8c5cc" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#b8c5cc" stopOpacity="0" />
           </radialGradient>
         </defs>
 
         <g filter="url(#smoke-wisps)" style={{ mixBlendMode: "screen" }}>
           <g ref={(el) => { puffRefs.current[0] = el; }}>
-            <ellipse cx="180" cy="430" rx="340" ry="190" fill="url(#puff-acid)" />
+            <ellipse cx="180" cy="570" rx="340" ry="190" fill="url(#puff-acid)" />
           </g>
           <g ref={(el) => { puffRefs.current[1] = el; }}>
-            <ellipse cx="540" cy="450" rx="380" ry="200" fill="url(#puff-magenta)" />
+            <ellipse cx="540" cy="590" rx="380" ry="200" fill="url(#puff-gray)" />
           </g>
           <g ref={(el) => { puffRefs.current[2] = el; }}>
-            <ellipse cx="820" cy="440" rx="320" ry="180" fill="url(#puff-amber)" />
+            <ellipse cx="820" cy="580" rx="320" ry="180" fill="url(#puff-acid)" />
           </g>
           <g ref={(el) => { puffRefs.current[3] = el; }}>
-            <ellipse cx="1080" cy="430" rx="340" ry="190" fill="url(#puff-violet)" />
+            <ellipse cx="1080" cy="570" rx="340" ry="190" fill="url(#puff-gray)" />
           </g>
         </g>
       </svg>

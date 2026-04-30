@@ -8,9 +8,11 @@ interface SectionLabelProps {
 export function SectionLabel({ children }: SectionLabelProps) {
   return (
     <Box
+      component="h2"
       sx={{
         fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
         fontSize: 12,
+        fontWeight: 600,
         letterSpacing: "0.18em",
         textTransform: "uppercase",
         color: "accent.acid",
@@ -18,11 +20,17 @@ export function SectionLabel({ children }: SectionLabelProps) {
         display: "flex",
         alignItems: "center",
         gap: "10px",
+        counterIncrement: "section",
+        "&::before": {
+          content: 'counter(section, upper-alpha) ")"',
+          fontVariantNumeric: "tabular-nums",
+          opacity: 0.85,
+        },
         "&::after": {
           content: '""',
           flex: 1,
           height: "1px",
-          background: "repeating-linear-gradient(90deg, #2a3a30 0 4px, transparent 4px 8px)",
+          background: "rgba(127,255,212,0.35)",
         },
       }}
     >
