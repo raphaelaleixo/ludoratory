@@ -59,9 +59,19 @@ export function Hero({ site, specimenCount }: HeroProps) {
           mb: 3.5,
         }}
       >
-        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid", fontWeight: 600 }}>
+        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 1, color: "accent.acid" }}>
           <Ludoratory size={20} />
-          {name.toUpperCase()}
+          <Box
+            component="span"
+            sx={{
+              fontFamily: '"Space Grotesk", "Inter", sans-serif',
+              fontWeight: 700,
+              fontSize: 14,
+              letterSpacing: "0.04em",
+            }}
+          >
+            {name.toUpperCase()}
+          </Box>
           <Box component="span" sx={{ color: "text.disabled", fontWeight: 400, ml: 0.5 }}>
             ·{" "}
             <Link href={attribution.url} target="_blank" rel="noopener noreferrer" sx={{ color: "inherit", textDecoration: "none", "&:hover": { textDecoration: "underline" } }}>

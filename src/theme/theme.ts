@@ -54,9 +54,9 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Inter", system-ui, sans-serif',
-    h1: { fontFamily: '"Archivo Black", "Inter", sans-serif', letterSpacing: "-0.025em", lineHeight: 0.92 },
-    h2: { fontFamily: '"Archivo Black", "Inter", sans-serif', letterSpacing: "-0.02em" },
-    h3: { fontFamily: '"Archivo Black", "Inter", sans-serif', letterSpacing: "-0.02em" },
+    h1: { fontFamily: '"Space Grotesk", "Inter", sans-serif', fontWeight: 700, letterSpacing: "-0.025em", lineHeight: 0.92 },
+    h2: { fontFamily: '"Space Grotesk", "Inter", sans-serif', fontWeight: 700, letterSpacing: "-0.02em" },
+    h3: { fontFamily: '"Space Grotesk", "Inter", sans-serif', fontWeight: 700, letterSpacing: "-0.02em" },
     body1: { fontSize: "14px", lineHeight: 1.55 },
     button: { textTransform: "none", fontWeight: 600 },
   },
