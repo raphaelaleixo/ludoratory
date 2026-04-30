@@ -3,12 +3,15 @@ import siteContent from "../content/site.json";
 import type { SiteContent } from "../types";
 import { Hero } from "../components/Hero";
 import { SpecimenCatalog } from "../components/SpecimenCatalog";
+import { LabOriginals } from "../components/LabOriginals";
 import { ApparatusSection } from "../components/ApparatusSection";
 import { HouseRules } from "../components/HouseRules";
 import { SiteFoot } from "../components/SiteFoot";
 import { Smoke } from "../components/effects/Smoke";
 
 const content = siteContent as SiteContent;
+const adaptedGames = content.games.filter((g) => g.status !== "original");
+const originalGames = content.games.filter((g) => g.status === "original");
 
 export default function HomePage() {
   return (
@@ -35,7 +38,8 @@ export default function HomePage() {
       >
         <Smoke />
         <Hero site={content.site} specimenCount={content.games.length} />
-        <SpecimenCatalog games={content.games} />
+        <SpecimenCatalog games={adaptedGames} />
+        <LabOriginals games={originalGames} />
         <ApparatusSection apparatus={content.apparatus} />
         <HouseRules rules={content.houseRules} />
         <SiteFoot email={content.footer.email} links={content.footer.links} />
