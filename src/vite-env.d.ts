@@ -10,3 +10,8 @@ declare module "*.mdx" {
   const Component: ComponentType<Record<string, unknown>>;
   export default Component;
 }
+
+declare module "virtual:lab-notes-meta" {
+  const meta: Record<string, { title: string }>;
+  export default meta;
+}

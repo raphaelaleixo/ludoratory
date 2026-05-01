@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import type { HouseRule } from "../types";
 import { SectionLabel } from "./SectionLabel";
 import { SectionNote } from "./SectionNote";
+import { NumberBadge } from "./NumberBadge";
 
 interface HouseRulesProps {
   rules: HouseRule[];
@@ -31,24 +32,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
         <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" }, gap: "16px 24px" }}>
           {rules.map((r) => (
             <Box key={r.number} sx={{ display: "flex", gap: 1.5, alignItems: "flex-start" }}>
-              <Box
-                sx={{
-                  fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-                  fontSize: 16,
-                  fontWeight: 600,
-                  fontVariantNumeric: "tabular-nums",
-                  color: "accent.acid",
-                  border: "1px solid #2a4a44",
-                  borderRadius: "4px",
-                  padding: "2px 6px",
-                  minWidth: 26,
-                  textAlign: "center",
-                  flexShrink: 0,
-                  mt: "2px",
-                }}
-              >
-                {r.number}
-              </Box>
+              <NumberBadge>{r.number}</NumberBadge>
               <Box>
                 <Box
                   component="h4"

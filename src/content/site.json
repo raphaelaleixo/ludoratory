@@ -11,7 +11,8 @@
     { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "ϟ no installs. shared screen + phones" },
     { "id": "labOriginals",    "label": "Lab Originals",    "note": "✶ home-grown experiments. original rules" },
     { "id": "apparatus",       "label": "The Apparatus",    "note": "⌬ powering every specimen above" },
-    { "id": "houseRules",      "label": "House Rules",      "note": "⚖ how this place actually works" }
+    { "id": "houseRules",      "label": "House Rules",      "note": "⚖ how this place actually works" },
+    { "id": "labNotes",        "label": "Lab Notes",        "note": "✎ scratchpad. half-baked thoughts from the bench" }
   ],
   "games": [
     {

@@ -13,9 +13,13 @@ import theme from "./theme/theme";
 import { MdxProvider } from "./components/MdxProvider";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
+const LabNotesIndexPage = lazy(() => import("./pages/LabNotesIndexPage"));
+const LabNotePage = lazy(() => import("./pages/LabNotePage"));
 
 const routes: RouteObject[] = [
   { path: "/", element: <HomePage /> },
+  { path: "/lab-notes", element: <LabNotesIndexPage /> },
+  { path: "/lab-notes/:slug", element: <LabNotePage /> },
   { path: "*", element: <Navigate to="/" replace /> },
 ];
 

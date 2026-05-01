@@ -49,7 +49,7 @@ export interface SiteCopy {
   thesis: string;
 }
 
-export type SectionId = "specimenCatalog" | "labOriginals" | "apparatus" | "houseRules";
+export type SectionId = "specimenCatalog" | "labOriginals" | "apparatus" | "houseRules" | "labNotes";
 
 export interface Section {
   id: SectionId;

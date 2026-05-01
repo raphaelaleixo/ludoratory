@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local-only lab note used to dev/preview MDX styling
+src/content/lab-notes/*-markdown-styling-test.md

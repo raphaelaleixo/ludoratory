@@ -6,6 +6,7 @@ import { SpecimenCatalog } from "../components/SpecimenCatalog";
 import { LabOriginals } from "../components/LabOriginals";
 import { ApparatusSection } from "../components/ApparatusSection";
 import { HouseRules } from "../components/HouseRules";
+import { LabNotesSection } from "../components/LabNotesSection";
 import { SiteFoot } from "../components/SiteFoot";
 
 const content = siteContent as SiteContent;
@@ -79,6 +80,10 @@ export default function HomePage() {
             rules={content.houseRules}
             label={sectionsById.houseRules.label}
             note={sectionsById.houseRules.note}
+          />
+          <LabNotesSection
+            label={sectionsById.labNotes.label}
+            note={sectionsById.labNotes.note}
           />
         </Box>
         <SiteFoot links={content.footer.links} license={content.footer.license} />
