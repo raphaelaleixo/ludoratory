@@ -19,19 +19,43 @@ const sectionsById = Object.fromEntries(
 export default function HomePage() {
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "surface.base", py: { xs: 3, md: 5 }, px: { xs: 2, md: 4 } }}>
+      {/* fixed grid layer — top/bottom inset preserves the viewport gap when scrolling */}
+      <Box
+        aria-hidden
+        sx={{
+          position: "fixed",
+          inset: 0,
+          py: { xs: 3, md: 5 },
+          px: { xs: 2, md: 4 },
+          pointerEvents: "none",
+          zIndex: 0,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: 1100,
+            border: "1px solid #1f2a2a",
+            borderRadius: "8px",
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), " +
+              "linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+            backgroundSize: "28px 28px",
+            backgroundAttachment: "fixed",
+          }}
+        />
+      </Box>
       <Box
         sx={{
           maxWidth: 1100,
           mx: "auto",
           padding: { xs: "24px", md: "36px 38px 44px" },
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), " +
-            "linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-          backgroundAttachment: "fixed",
           color: "text.primary",
           fontFamily: '"DM Sans", system-ui, sans-serif',
           position: "relative",
+          zIndex: 1,
         }}
       >
         <Box component="main" sx={{ counterReset: "section" }}>

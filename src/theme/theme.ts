@@ -14,17 +14,10 @@ declare module "@mui/material/styles" {
       apparatus: string;
       rules: string;
     };
-    tape: {
-      yellow: string;
-      cream: string;
-      blue: string;
-      orange: string;
-    };
   }
   interface PaletteOptions {
     accent?: Partial<Palette["accent"]>;
     surface?: Partial<Palette["surface"]>;
-    tape?: Partial<Palette["tape"]>;
   }
 }
 
@@ -44,12 +37,6 @@ const theme = createTheme({
       tile: "#020606",
       apparatus: "#010505",
       rules: "#030607",
-    },
-    tape: {
-      yellow: "rgba(245, 222, 130, 0.94)",
-      cream: "rgba(255, 230, 160, 0.94)",
-      blue: "rgba(180, 200, 245, 0.94)",
-      orange: "rgba(255, 140, 100, 0.94)",
     },
   },
   typography: {

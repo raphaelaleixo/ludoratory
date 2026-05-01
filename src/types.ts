@@ -1,5 +1,4 @@
 export type GameStatus = "live" | "in-trials" | "original" | "brewing";
-export type TapeVariant = "yellow" | "cream" | "blue" | "orange";
 export type ScribbleColor = "acid" | "amber" | "magenta" | "violet" | "gray";
 
 export interface Attribution {
@@ -9,7 +8,6 @@ export interface Attribution {
 
 export interface Game {
   id: string;
-  specimen: string;
   name: string;
   inspiration: string | null;
   description: string;
@@ -18,7 +16,6 @@ export interface Game {
   url: string;
   repoUrl: string;
   ogImage: string;
-  tapeVariant: TapeVariant;
   note: string | null;
 }
 

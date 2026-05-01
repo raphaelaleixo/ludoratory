@@ -16,7 +16,6 @@
   "games": [
     {
       "id": "krimi",
-      "specimen": "01",
       "name": "Krimi",
       "inspiration": "Deception: Murder in Hong Kong (Ho, 2014)",
       "description": "Decode the forensic scientist's clues to unmask the hidden murderer. A social-deduction party game played on a shared screen, controlled from your phones.",
@@ -25,12 +24,10 @@
       "url": "https://krimi.ludoratory.com",
       "repoUrl": "https://github.com/raphaelaleixo/krimi",
       "ogImage": "/og/krimi.png",
-      "tapeVariant": "yellow",
       "note": "hidden roles"
     },
     {
       "id": "colorlition",
-      "specimen": "02",
       "name": "Colorlition",
       "inspiration": "Coloretto (Schacht, 2003)",
       "description": "A real-time card-drafting party game where political coalitions are built one demand at a time. Don't let your top three colors flip-flop.",
@@ -39,12 +36,10 @@
       "url": "https://colorlition.ludoratory.com",
       "repoUrl": "https://github.com/raphaelaleixo/colorlition",
       "ogImage": "/og/colorlition.png",
-      "tapeVariant": "cream",
       "note": "push your luck"
     },
     {
       "id": "unmatched",
-      "specimen": "03",
       "name": "Unmatched",
       "inspiration": "Just One (Repos Production, 2018)",
       "description": "Zero duplicates. Total cooperation. A web-based word game where great minds mustn't think alike. Friends, a shared screen, your phones.",
@@ -53,12 +48,10 @@
       "url": "https://unmatched.ludoratory.com",
       "repoUrl": "https://github.com/raphaelaleixo/react-unmatched",
       "ogImage": "/og/unmatched.png",
-      "tapeVariant": "yellow",
       "note": "co-op wordplay"
     },
     {
       "id": "arcanepoker",
-      "specimen": "04",
       "name": "Arcane Poker",
       "inspiration": "original · single-player experiment",
       "description": "What happens when the Tarot rewrites the rules of Poker? A tactical evolution where every Page drawn bends the board. Your fate is on the table.",
@@ -67,7 +60,6 @@
       "url": "https://arcanepoker.ludoratory.com",
       "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
       "ogImage": "/og/arcanepoker.png",
-      "tapeVariant": "blue",
       "note": "rule-bending cards"
     }
   ],

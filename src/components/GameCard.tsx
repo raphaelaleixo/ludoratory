@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
-import type { Game, TapeVariant } from "../types";
+import type { Game } from "../types";
 
 interface GameCardProps {
   game: Game;
@@ -9,24 +9,9 @@ interface GameCardProps {
   index?: number;
 }
 
-const tapeRotation = [-3, 3, -2, 2.5];
-const tapePosition: Array<"left" | "right"> = ["left", "right", "left", "right"];
-
 const noteColors = ["#7fffd4", "#ffd166", "#ff9bbd"]; // acid, amber, magenta — cycles per index
 
-function tapeBg(variant: TapeVariant): string {
-  return {
-    yellow: "rgba(245, 222, 130, 0.94)",
-    cream: "rgba(255, 230, 160, 0.94)",
-    blue: "rgba(180, 200, 245, 0.94)",
-    orange: "rgba(255, 140, 100, 0.94)",
-  }[variant];
-}
-
 export function GameCard({ game, index = 0 }: GameCardProps) {
-  const tapeRot = tapeRotation[index % tapeRotation.length];
-  const tapeSide = tapePosition[index % tapePosition.length];
-
   return (
     <Box
       sx={{
@@ -47,156 +32,168 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
         },
       }}
     >
-      {/* tape label */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: -10,
-          [tapeSide]: 24,
-          background: tapeBg(game.tapeVariant),
-          color: game.tapeVariant === "blue" ? "#0e1a30" : "#2a2010",
-          fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-          fontSize: 12,
-          fontWeight: 600,
-          letterSpacing: "0.16em",
-          textTransform: "uppercase",
-          padding: "4px 11px",
-          transform: `rotate(${tapeRot}deg)`,
-          boxShadow: "0 2px 6px rgba(0,0,0,0.4)",
-          zIndex: 2,
-        }}
-      >
-        Spec. №{game.specimen}
-      </Box>
-
-      {/* image — clicking it opens the game */}
+      {/* content area — entire image + body is the play link */}
       <Link
         href={game.url}
         target="_blank"
         rel="noopener noreferrer"
         sx={{
-          display: "block",
-          aspectRatio: "1200 / 630",
-          background: "#000",
-          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          color: "inherit",
+          textDecoration: "none",
           borderRadius: "7px 7px 0 0",
-          position: "relative",
-          "& img": {
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            display: "block",
+          "& .game-card-img": {
             transition: "transform 0.4s ease, filter 0.4s ease",
           },
-          "&::after": {
-            content: '""',
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(180deg, transparent 55%, rgba(127, 255, 212, 0.18))",
+          "& .game-card-overlay": {
             opacity: 0,
-            transition: "opacity 0.3s ease",
-            pointerEvents: "none",
+            transition: "opacity 0.25s ease",
           },
-          "&:hover img": { transform: "scale(1.04)", filter: "brightness(1.08)" },
-          "&:hover::after": { opacity: 1 },
+          "& .game-card-overlay-chip": {
+            transform: "translateY(8px)",
+            transition: "transform 0.25s ease",
+          },
+          "&:hover .game-card-img, &:focus-visible .game-card-img": {
+            transform: "scale(1.04)",
+            filter: "brightness(1.08)",
+          },
+          "&:hover .game-card-overlay, &:focus-visible .game-card-overlay": {
+            opacity: 1,
+          },
+          "&:hover .game-card-overlay-chip, &:focus-visible .game-card-overlay-chip": {
+            transform: "translateY(0)",
+          },
           "@media (prefers-reduced-motion: reduce)": {
-            "&:hover img": { transform: "none" },
+            "&:hover .game-card-img, &:focus-visible .game-card-img": { transform: "none" },
+            "&:hover .game-card-overlay-chip, &:focus-visible .game-card-overlay-chip": {
+              transform: "none",
+            },
           },
         }}
       >
-        <Box component="img" src={game.ogImage} alt={game.name} />
-      </Link>
-
-      {/* body */}
-      <Box sx={{ padding: "18px 20px", display: "flex", flexDirection: "column", gap: 1, flex: 1 }}>
-        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 1.5 }}>
-          <Typography variant="h3" sx={{ fontSize: 26, lineHeight: 1, color: "text.primary", m: 0 }}>
-            {game.name}
-          </Typography>
-          {game.note && (
-            <Box
-              aria-hidden="true"
-              sx={{
-                fontFamily: '"Caveat", cursive',
-                color: noteColors[index % noteColors.length],
-                fontSize: 24,
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-                transform: `rotate(${index % 2 === 0 ? -3 : 3}deg)`,
-                flexShrink: 0,
-              }}
-            >
-              {game.note}
-            </Box>
-          )}
-        </Box>
-        {game.inspiration && (
-          <Box sx={{ fontFamily: '"Space Grotesk", "DM Sans", sans-serif', fontSize: 12, color: "text.disabled", letterSpacing: "0.04em" }}>
-            ↳ {game.inspiration}
-          </Box>
-        )}
-        <Typography sx={{ fontSize: 16, lineHeight: 1.5, color: "text.secondary", margin: "4px 0 12px" }}>
-          {game.description}
-        </Typography>
-
-        {/* footer */}
+        {/* image with Play now overlay */}
         <Box
           sx={{
-            mt: "auto",
-            display: "flex",
-            flexDirection: { xs: "column", lg: "row" },
-            justifyContent: { xs: "flex-start", lg: "space-between" },
-            alignItems: { xs: "flex-start", lg: "center" },
-            gap: 1,
-            paddingTop: 1.5,
-            borderTop: "1px dashed #2a3a3a",
-            fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-            fontSize: 12,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            color: "text.secondary",
+            display: "block",
+            aspectRatio: "1200 / 630",
+            background: "#000",
+            overflow: "hidden",
+            borderRadius: "7px 7px 0 0",
+            position: "relative",
           }}
         >
-          <Box sx={{ display: "flex", gap: 1.25, alignItems: "center" }}>
-            <Box component="span">{game.players}</Box>
-          </Box>
-          <Box sx={{ display: "flex", gap: 1.5 }}>
-            <Link
-              href={game.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+          <Box
+            component="img"
+            className="game-card-img"
+            src={game.ogImage}
+            alt={game.name}
+            sx={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />
+          <Box
+            className="game-card-overlay"
+            aria-hidden="true"
+            sx={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              backgroundColor: "rgba(2, 6, 6, 0.55)",
+              pointerEvents: "none",
+              zIndex: 2,
+            }}
+          >
+            <Box
+              className="game-card-overlay-chip"
               sx={{
-                color: "accent.magenta",
+                bgcolor: "accent.acid",
+                color: "#020606",
+                fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                fontWeight: 700,
                 fontSize: 14,
-                textDecoration: "none",
-                fontWeight: 600,
-                transition: "filter 0.2s ease",
-                "& .arrow": { display: "inline-block", transition: "transform 0.2s ease" },
-                "&:hover": { filter: "brightness(1.15)" },
-                "&:hover .arrow": { transform: "translate(2px, -2px)" },
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                padding: "10px 18px",
+                borderRadius: "4px",
+                boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
               }}
             >
-              code <Box component="span" className="arrow">↗</Box>
-            </Link>
-            <Link
-              href={game.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                color: "accent.acid",
-                fontSize: 14,
-                textDecoration: "none",
-                fontWeight: 600,
-                transition: "filter 0.2s ease",
-                "& .arrow": { display: "inline-block", transition: "transform 0.2s ease" },
-                "&:hover": { filter: "brightness(1.15)" },
-                "&:hover .arrow": { transform: "translate(2px, -2px)" },
-              }}
-            >
-              play <Box component="span" className="arrow">↗</Box>
-            </Link>
+              Play now ↗
+            </Box>
           </Box>
         </Box>
+
+        {/* body */}
+        <Box sx={{ padding: "18px 20px 16px", display: "flex", flexDirection: "column", gap: 1, flex: 1 }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 1.5 }}>
+            <Typography variant="h3" sx={{ fontSize: 26, lineHeight: 1, color: "text.primary", m: 0 }}>
+              {game.name}
+            </Typography>
+            {game.note && (
+              <Box
+                aria-hidden="true"
+                sx={{
+                  fontFamily: '"Caveat", cursive',
+                  color: noteColors[index % noteColors.length],
+                  fontSize: 24,
+                  lineHeight: 1,
+                  whiteSpace: "nowrap",
+                  transform: `rotate(${index % 2 === 0 ? -3 : 3}deg)`,
+                  flexShrink: 0,
+                }}
+              >
+                {game.note}
+              </Box>
+            )}
+          </Box>
+          {game.inspiration && (
+            <Box sx={{ fontFamily: '"Space Grotesk", "DM Sans", sans-serif', fontSize: 12, color: "text.disabled", letterSpacing: "0.04em" }}>
+              ↳ {game.inspiration}
+            </Box>
+          )}
+          <Typography sx={{ fontSize: 16, lineHeight: 1.5, color: "text.secondary", margin: "4px 0 0" }}>
+            {game.description}
+          </Typography>
+        </Box>
+      </Link>
+
+      {/* footer (separated from content) */}
+      <Box
+        sx={{
+          padding: "12px 20px 16px",
+          borderTop: "1px dashed #2a3a3a",
+          display: "flex",
+          flexDirection: { xs: "column", lg: "row" },
+          justifyContent: { xs: "flex-start", lg: "space-between" },
+          alignItems: { xs: "flex-start", lg: "center" },
+          gap: 1,
+          fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+          fontSize: 12,
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          color: "text.secondary",
+        }}
+      >
+        <Box component="span">{game.players}</Box>
+        <Link
+          href={game.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "accent.magenta",
+            fontSize: 14,
+            textDecoration: "none",
+            fontWeight: 600,
+            transition: "filter 0.2s ease",
+            "& .arrow": { display: "inline-block", transition: "transform 0.2s ease" },
+            "&:hover": { filter: "brightness(1.15)" },
+            "&:hover .arrow": { transform: "translate(2px, -2px)" },
+          }}
+        >
+          code <Box component="span" className="arrow">↗</Box>
+        </Link>
       </Box>
     </Box>
   );

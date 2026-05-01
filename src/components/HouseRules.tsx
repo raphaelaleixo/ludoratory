@@ -24,27 +24,6 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
           position: "relative",
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            top: -10,
-            right: 36,
-            bgcolor: "tape.yellow",
-            color: "#2a2010",
-            fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            padding: "4px 11px",
-            transform: "rotate(2deg)",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.4)",
-            zIndex: 2,
-          }}
-        >
-          Lab Notice
-        </Box>
-
         <Typography variant="h2" component="h3" sx={{ fontSize: 26, m: 0, mb: 2.5, color: "text.primary" }}>
           The fine print, kept short.
         </Typography>
@@ -57,6 +36,7 @@ export function HouseRules({ rules, label, note }: HouseRulesProps) {
                   fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
                   fontSize: 16,
                   fontWeight: 600,
+                  fontVariantNumeric: "tabular-nums",
                   color: "accent.acid",
                   border: "1px solid #2a4a44",
                   borderRadius: "4px",
