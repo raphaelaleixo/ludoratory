@@ -18,13 +18,14 @@ describe("GameCard", () => {
         players="5–12 players"
         inspiration="Deception: Murder in Hong Kong (Ho, 2014)"
       >
-        Decode the forensic scientist's clues.
+        Find the hidden murderer.
       </GameCard>,
     );
     expect(screen.getByText("Krimi")).toBeInTheDocument();
     expect(screen.getByText(/5–12/)).toBeInTheDocument();
-    expect(screen.getByText(/forensic scientist/)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /play/i })).toHaveAttribute(
+    expect(screen.getByText(/hidden murderer/)).toBeInTheDocument();
+    // Play link wraps the image + body; its accessible name comes from the image alt + body text.
+    expect(screen.getByRole("link", { name: /Krimi/i })).toHaveAttribute(
       "href",
       "https://krimi.ludoratory.com",
     );
@@ -81,7 +82,10 @@ describe("GameCard", () => {
         body
       </GameCard>,
     );
-    expect(screen.queryByRole("link", { name: /play/i })).not.toBeInTheDocument();
+    // The image-wrapping link is identified by the game name (from the img alt + h3).
+    // When url is absent the wrapper is gone — only the footer "code" link should remain.
+    expect(screen.queryByRole("link", { name: /^X/i })).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /code/i })).toBeInTheDocument();
   });
 
   it("omits the footer entirely when both repoUrl and players are absent", () => {
