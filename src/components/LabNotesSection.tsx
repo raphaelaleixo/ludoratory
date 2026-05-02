@@ -57,7 +57,7 @@ export function LabNotesSection({ label, note, limit = 3 }: LabNotesSectionProps
                 component={RouterLink}
                 to={`/lab-notes/${p.slug}`}
                 underline="hover"
-                sx={{ color: "text.primary", fontSize: 16, fontWeight: 500 }}
+                sx={{ color: "text.primary", fontSize: 16, fontWeight: 700 }}
               >
                 {p.title}
               </Link>
