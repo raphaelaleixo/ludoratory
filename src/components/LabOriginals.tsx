@@ -25,9 +25,15 @@ export function LabOriginals({ games, label, note }: LabOriginalsProps) {
           rowGap: "28px",
         }}
       >
-        {games.map((game, i) => (
-          <GameCard key={game.id} game={game} index={i} />
-        ))}
+        {games.map((game, i) => {
+          const { id, status: _status, description, ogImage, ...rest } = game;
+          void _status;
+          return (
+            <GameCard key={id} {...rest} image={ogImage} index={i}>
+              {description}
+            </GameCard>
+          );
+        })}
       </Box>
     </Box>
   );
