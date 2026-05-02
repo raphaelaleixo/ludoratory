@@ -25,3 +25,4 @@ dist-ssr
 
 # Local-only lab note used to dev/preview MDX styling
 src/content/lab-notes/*-markdown-styling-test.md
+public/og/notes/markdown-styling-test.png

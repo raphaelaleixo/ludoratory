@@ -21,9 +21,7 @@ const routes: RouteObject[] = [
   { path: "/", element: <HomePage /> },
   { path: "/lab-notes", element: <LabNotesIndexPage /> },
   { path: "/lab-notes/:slug", element: <LabNotePage /> },
-  ...(import.meta.env.DEV
-    ? [{ path: "/og-image", element: <OgImagePage /> }]
-    : []),
+  { path: "/og-image", element: <OgImagePage /> },
   { path: "*", element: <Navigate to="/" replace /> },
 ];
 

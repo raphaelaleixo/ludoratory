@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import siteContent from "../content/site.json";
@@ -33,8 +35,39 @@ function HeadlineLine({ line, glowToken }: { line: string; glowToken: string }) 
   );
 }
 
+function noteFontSize(title: string): number {
+  if (title.length >= 60) return 56;
+  if (title.length >= 40) return 68;
+  return 80;
+}
+
 export default function OgImagePage() {
   const { name, headline, headlineGlowToken } = content.site;
+  const [params] = useSearchParams();
+  const title = params.get("title");
+  const date = params.get("date");
+
+  useEffect(() => {
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    const ready = document.fonts?.ready ?? Promise.resolve();
+    ready.then(() => {
+      if (!cancelled) document.body.dataset.ogReady = "1";
+    });
+    return () => {
+      cancelled = true;
+      delete document.body.dataset.ogReady;
+    };
+  }, [title, date]);
 
   return (
     <Box
@@ -116,23 +149,60 @@ export default function OgImagePage() {
               </Box>
             </Box>
 
-            {/* headline */}
-            <Typography
-              variant="h1"
-              component="h1"
-              sx={{
-                fontSize: 80,
-                lineHeight: 0.95,
-                color: "text.primary",
-                m: 0,
-              }}
-            >
-              {headline.map((line, i) => (
-                <Box component="span" key={i} sx={{ display: "block" }}>
-                  <HeadlineLine line={line} glowToken={headlineGlowToken} />
+            {title ? (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  gap: 2.5,
+                  maxWidth: 1024,
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                    fontWeight: 600,
+                    fontSize: 18,
+                    letterSpacing: "0.18em",
+                    color: "accent.amber",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {date ? `Lab Note · ${date}` : "Lab Note"}
                 </Box>
-              ))}
-            </Typography>
+                <Typography
+                  variant="h1"
+                  component="h1"
+                  sx={{
+                    fontSize: noteFontSize(title),
+                    lineHeight: 1.0,
+                    color: "text.primary",
+                    m: 0,
+                  }}
+                >
+                  {title}
+                </Typography>
+              </Box>
+            ) : (
+              <Typography
+                variant="h1"
+                component="h1"
+                sx={{
+                  fontSize: 80,
+                  lineHeight: 0.95,
+                  color: "text.primary",
+                  m: 0,
+                }}
+              >
+                {headline.map((line, i) => (
+                  <Box component="span" key={i} sx={{ display: "block" }}>
+                    <HeadlineLine line={line} glowToken={headlineGlowToken} />
+                  </Box>
+                ))}
+              </Typography>
+            )}
           </Box>
         </Box>
       </Box>
