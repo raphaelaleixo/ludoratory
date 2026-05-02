@@ -107,48 +107,66 @@ export default function OgImagePage() {
           }}
         />
 
-        {/* content */}
-        <Box
-          sx={{
-            position: "absolute",
-            inset: 32,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: 5,
-            }}
-          >
-            {/* logo bar */}
+        {title ? (
+          <>
+            {/* note mode: header bar with logo left + Lab note right */}
             <Box
               sx={{
-                display: "inline-flex",
+                position: "absolute",
+                top: 64,
+                left: 64,
+                right: 64,
+                display: "flex",
                 alignItems: "center",
-                gap: 1.25,
-                color: "accent.acid",
+                justifyContent: "space-between",
               }}
             >
-              <Ludoratory size={52} />
+              <Box
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 1.25,
+                  color: "accent.acid",
+                }}
+              >
+                <Ludoratory size={52} />
+                <Box
+                  component="span"
+                  sx={{
+                    fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                    fontWeight: 700,
+                    fontSize: 26,
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {name.toUpperCase()}
+                </Box>
+              </Box>
               <Box
                 component="span"
                 sx={{
                   fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-                  fontWeight: 700,
-                  fontSize: 26,
-                  letterSpacing: "0.04em",
+                  fontWeight: 600,
+                  fontSize: 18,
+                  letterSpacing: "0.18em",
+                  color: "accent.amber",
+                  textTransform: "uppercase",
                 }}
               >
-                {name.toUpperCase()}
+                Lab note
               </Box>
             </Box>
 
-            {title ? (
+            {/* note title centered in canvas */}
+            <Box
+              sx={{
+                position: "absolute",
+                inset: 64,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
               <Typography
                 variant="h1"
                 component="h1"
@@ -162,7 +180,48 @@ export default function OgImagePage() {
               >
                 {title}
               </Typography>
-            ) : (
+            </Box>
+          </>
+        ) : (
+          /* site mode (unchanged): logo + headline as a centered column */
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 32,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: 5,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 1.25,
+                  color: "accent.acid",
+                }}
+              >
+                <Ludoratory size={52} />
+                <Box
+                  component="span"
+                  sx={{
+                    fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
+                    fontWeight: 700,
+                    fontSize: 26,
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  {name.toUpperCase()}
+                </Box>
+              </Box>
               <Typography
                 variant="h1"
                 component="h1"
@@ -179,9 +238,9 @@ export default function OgImagePage() {
                   </Box>
                 ))}
               </Typography>
-            )}
+            </Box>
           </Box>
-        </Box>
+        )}
       </Box>
     </Box>
   );
