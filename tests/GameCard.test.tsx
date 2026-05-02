@@ -2,58 +2,114 @@ import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../src/theme/theme";
 import { GameCard } from "../src/components/GameCard";
-import type { Game } from "../src/types";
 
-const baseGame: Game = {
-  id: "krimi",
-  specimen: "01",
-  name: "Krimi",
-  inspiration: "Deception: Murder in Hong Kong (Ho, 2014)",
-  description: "Decode the forensic scientist's clues.",
-  players: "5–12",
-  status: "live",
-  url: "https://krimi.ludoratory.com",
-  repoUrl: "https://github.com/raphaelaleixo/krimi",
-  ogImage: "/og/krimi.png",
-  tapeVariant: "yellow",
-  note: null,
-};
-
-function renderCard(game: Game) {
-  return render(
-    <ThemeProvider theme={theme}>
-      <GameCard game={game} />
-    </ThemeProvider>,
-  );
+function renderCard(ui: React.ReactElement) {
+  return render(<ThemeProvider theme={theme}>{ui}</ThemeProvider>);
 }
 
 describe("GameCard", () => {
-  it("renders the game name, players, description, and play/code links", () => {
-    renderCard(baseGame);
+  it("renders name, players, description (children), and play/code links when all props are present", () => {
+    renderCard(
+      <GameCard
+        name="Krimi"
+        image="/og/krimi.png"
+        url="https://krimi.ludoratory.com"
+        repoUrl="https://github.com/raphaelaleixo/krimi"
+        players="5–12 players"
+        inspiration="Deception: Murder in Hong Kong (Ho, 2014)"
+      >
+        Decode the forensic scientist's clues.
+      </GameCard>,
+    );
     expect(screen.getByText("Krimi")).toBeInTheDocument();
     expect(screen.getByText(/5–12/)).toBeInTheDocument();
     expect(screen.getByText(/forensic scientist/)).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /play/i })).toHaveAttribute("href", "https://krimi.ludoratory.com");
-    expect(screen.getByRole("link", { name: /code/i })).toHaveAttribute("href", "https://github.com/raphaelaleixo/krimi");
+    expect(screen.getByRole("link", { name: /play/i })).toHaveAttribute(
+      "href",
+      "https://krimi.ludoratory.com",
+    );
+    expect(screen.getByRole("link", { name: /code/i })).toHaveAttribute(
+      "href",
+      "https://github.com/raphaelaleixo/krimi",
+    );
   });
 
-  it("renders the inspiration line when non-null", () => {
-    renderCard(baseGame);
-    expect(screen.getByText(/Deception: Murder in Hong Kong/)).toBeInTheDocument();
+  it("renders the inspiration line when provided", () => {
+    renderCard(
+      <GameCard
+        name="X"
+        image="/i.png"
+        url="https://x"
+        repoUrl="https://r"
+        players="2"
+        inspiration="Some Source (2020)"
+      >
+        body
+      </GameCard>,
+    );
+    expect(screen.getByText(/Some Source/)).toBeInTheDocument();
   });
 
-  it("omits the inspiration line when null", () => {
-    renderCard({ ...baseGame, inspiration: null });
+  it("omits the inspiration line when not provided", () => {
+    renderCard(
+      <GameCard name="X" image="/i.png" url="https://x" repoUrl="https://r" players="2">
+        body
+      </GameCard>,
+    );
     expect(screen.queryByText(/↳/)).not.toBeInTheDocument();
   });
 
-  it("renders the note as a scribble when non-null", () => {
-    renderCard({ ...baseGame, note: "tested w/ 6 ppl ✓" });
-    expect(screen.getByText("tested w/ 6 ppl ✓")).toBeInTheDocument();
+  it("renders the note as a scribble when provided", () => {
+    renderCard(
+      <GameCard
+        name="X"
+        image="/i.png"
+        url="https://x"
+        repoUrl="https://r"
+        players="2"
+        note="hidden roles"
+      >
+        body
+      </GameCard>,
+    );
+    expect(screen.getByText("hidden roles")).toBeInTheDocument();
   });
 
-  it("does not render a scribble when note is null", () => {
-    const { container } = renderCard(baseGame);
-    expect(container.textContent).not.toContain("tested w/");
+  it("does not render the play link or overlay when url is omitted", () => {
+    renderCard(
+      <GameCard name="X" image="/i.png" repoUrl="https://r" players="2">
+        body
+      </GameCard>,
+    );
+    expect(screen.queryByRole("link", { name: /play/i })).not.toBeInTheDocument();
+  });
+
+  it("omits the footer entirely when both repoUrl and players are absent", () => {
+    renderCard(
+      <GameCard name="X" image="/i.png" url="https://x">
+        body
+      </GameCard>,
+    );
+    expect(screen.queryByRole("link", { name: /code/i })).not.toBeInTheDocument();
+    expect(screen.queryByText(/players/i)).not.toBeInTheDocument();
+  });
+
+  it("renders only players in the footer when repoUrl is absent", () => {
+    renderCard(
+      <GameCard name="X" image="/i.png" url="https://x" players="3–5 players">
+        body
+      </GameCard>,
+    );
+    expect(screen.getByText(/3–5 players/)).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: /code/i })).not.toBeInTheDocument();
+  });
+
+  it("renders only the code link in the footer when players is absent", () => {
+    renderCard(
+      <GameCard name="X" image="/i.png" url="https://x" repoUrl="https://r">
+        body
+      </GameCard>,
+    );
+    expect(screen.getByRole("link", { name: /code/i })).toHaveAttribute("href", "https://r");
   });
 });
