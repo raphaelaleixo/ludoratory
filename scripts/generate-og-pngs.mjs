@@ -27,7 +27,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { discoverNotes } from "./lib/notes.mjs";
 
-const OG_TEMPLATE_VERSION = "2";
+const OG_TEMPLATE_VERSION = "3";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, "..");

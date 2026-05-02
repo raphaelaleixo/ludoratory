@@ -22,10 +22,9 @@ describe("OgImagePage", () => {
     expect(screen.getByText("LUDORATORY")).toBeInTheDocument();
   });
 
-  it("renders the note title and Lab Note label when ?title is present", () => {
+  it("renders the note title alone when ?title is present", () => {
     renderAt("/og-image?title=Why%20we%20stopped%20mocking");
     expect(screen.getByText("Why we stopped mocking")).toBeInTheDocument();
-    expect(screen.getByText(/^Lab Note$/i)).toBeInTheDocument();
     // site headline must NOT be rendered in note mode
     expect(screen.queryByText(/From Experiments/i)).not.toBeInTheDocument();
   });

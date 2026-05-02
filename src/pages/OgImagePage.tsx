@@ -149,41 +149,19 @@ export default function OgImagePage() {
             </Box>
 
             {title ? (
-              <Box
+              <Typography
+                variant="h1"
+                component="h1"
                 sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  gap: 2.5,
+                  fontSize: noteFontSize(title),
+                  lineHeight: 1.0,
+                  color: "text.primary",
+                  m: 0,
                   maxWidth: 1024,
                 }}
               >
-                <Box
-                  component="span"
-                  sx={{
-                    fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
-                    fontWeight: 600,
-                    fontSize: 18,
-                    letterSpacing: "0.18em",
-                    color: "accent.amber",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Lab Note
-                </Box>
-                <Typography
-                  variant="h1"
-                  component="h1"
-                  sx={{
-                    fontSize: noteFontSize(title),
-                    lineHeight: 1.0,
-                    color: "text.primary",
-                    m: 0,
-                  }}
-                >
-                  {title}
-                </Typography>
-              </Box>
+                {title}
+              </Typography>
             ) : (
               <Typography
                 variant="h1"
