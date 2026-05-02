@@ -206,6 +206,8 @@ const components = {
       <Box
         component="img"
         title={isWide ? undefined : (title as string | undefined)}
+        loading="lazy"
+        decoding="async"
         sx={{
           display: "block",
           maxWidth: "100%",

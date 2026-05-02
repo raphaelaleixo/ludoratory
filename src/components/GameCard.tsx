@@ -85,12 +85,24 @@ export function GameCard({ game, index = 0 }: GameCardProps) {
           }}
         >
           <Box
-            component="img"
+            component="picture"
             className="game-card-img"
-            src={game.ogImage}
-            alt={game.name}
-            sx={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />
+            sx={{
+              display: "block",
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <source srcSet={game.ogImage.replace(/\.png$/, ".webp")} type="image/webp" />
+            <Box
+              component="img"
+              src={game.ogImage}
+              alt={game.name}
+              loading="lazy"
+              decoding="async"
+              sx={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+            />
+          </Box>
           <Box
             className="game-card-overlay"
             aria-hidden="true"
