@@ -15,11 +15,15 @@ import { MdxProvider } from "./components/MdxProvider";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const LabNotesIndexPage = lazy(() => import("./pages/LabNotesIndexPage"));
 const LabNotePage = lazy(() => import("./pages/LabNotePage"));
+const OgImagePage = lazy(() => import("./pages/OgImagePage"));
 
 const routes: RouteObject[] = [
   { path: "/", element: <HomePage /> },
   { path: "/lab-notes", element: <LabNotesIndexPage /> },
   { path: "/lab-notes/:slug", element: <LabNotePage /> },
+  ...(import.meta.env.DEV
+    ? [{ path: "/og-image", element: <OgImagePage /> }]
+    : []),
   { path: "*", element: <Navigate to="/" replace /> },
 ];
 
