@@ -27,7 +27,7 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 import { discoverNotes } from "./lib/notes.mjs";
 
-const OG_TEMPLATE_VERSION = "1";
+const OG_TEMPLATE_VERSION = "2";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const projectRoot = resolve(__dirname, "..");
@@ -142,8 +142,7 @@ async function main() {
     for (const note of toRender) {
       const url =
         `http://localhost:${port}/og-image` +
-        `?title=${encodeURIComponent(note.title)}` +
-        `&date=${encodeURIComponent(note.date)}`;
+        `?title=${encodeURIComponent(note.title)}`;
       const page = await context.newPage();
       try {
         await page.goto(url, { waitUntil: "networkidle", timeout: 20000 });

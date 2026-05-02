@@ -45,7 +45,6 @@ export default function OgImagePage() {
   const { name, headline, headlineGlowToken } = content.site;
   const [params] = useSearchParams();
   const title = params.get("title");
-  const date = params.get("date");
 
   useEffect(() => {
     const meta = document.createElement("meta");
@@ -67,7 +66,7 @@ export default function OgImagePage() {
       cancelled = true;
       delete document.body.dataset.ogReady;
     };
-  }, [title, date]);
+  }, [title]);
 
   return (
     <Box
@@ -170,7 +169,7 @@ export default function OgImagePage() {
                     textTransform: "uppercase",
                   }}
                 >
-                  {date ? `Lab Note · ${date}` : "Lab Note"}
+                  Lab Note
                 </Box>
                 <Typography
                   variant="h1"

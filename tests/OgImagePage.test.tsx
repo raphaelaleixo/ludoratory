@@ -23,16 +23,10 @@ describe("OgImagePage", () => {
   });
 
   it("renders the note title and Lab Note label when ?title is present", () => {
-    renderAt("/og-image?title=Why%20we%20stopped%20mocking&date=2026-04-15");
+    renderAt("/og-image?title=Why%20we%20stopped%20mocking");
     expect(screen.getByText("Why we stopped mocking")).toBeInTheDocument();
-    expect(screen.getByText(/Lab Note · 2026-04-15/i)).toBeInTheDocument();
+    expect(screen.getByText(/^Lab Note$/i)).toBeInTheDocument();
     // site headline must NOT be rendered in note mode
     expect(screen.queryByText(/From Experiments/i)).not.toBeInTheDocument();
-  });
-
-  it("falls back to plain Lab Note label when only title is provided", () => {
-    renderAt("/og-image?title=Standalone%20note");
-    expect(screen.getByText("Standalone note")).toBeInTheDocument();
-    expect(screen.getByText(/^Lab Note$/i)).toBeInTheDocument();
   });
 });
