@@ -3,7 +3,7 @@ import { MDXProvider } from "@mdx-js/react";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-import { GameCard } from "./GameCard";
+import { GameCard as GameCardCore, type GameCardProps } from "./GameCard";
 
 // MDX passes arbitrary HTML props at runtime; heading wrappers need loose typing
 // because ComponentProps<typeof Typography> captures ref as HTMLSpanElement
@@ -267,7 +267,11 @@ const components = {
   NoteDown: ({ children }: { children?: ReactNode }) => (
     <Pointer direction="down">{children}</Pointer>
   ),
-  GameCard,
+  GameCard: (props: GameCardProps) => (
+    <Box sx={{ maxWidth: 520, mx: "auto", my: 3 }}>
+      <GameCardCore {...props} />
+    </Box>
+  ),
 };
 
 export function MdxProvider({ children }: { children: ReactNode }) {
