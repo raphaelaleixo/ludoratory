@@ -42,7 +42,7 @@ function Pointer({
         sx={{
           position: "absolute",
           left: 0,
-          ...(direction === "up" ? { top: "0.1em" } : { bottom: "0.1em" }),
+          ...(direction === "up" ? { top: "-11px" } : { bottom: "-25px" }),
           width: 28,
           height: 34,
           color: "accent.amber",
@@ -81,7 +81,7 @@ function Pointer({
 }
 
 const components = {
-  h1: (p: AnyProps) => <Typography variant="h2" component="h1" {...p} />,
+  h1: (p: AnyProps) => <Typography variant="h2" component="h1" sx={{ mb: 4 }} {...p} />,
   h2: (p: AnyProps) => (
     <Typography
       variant="h4"
@@ -90,6 +90,8 @@ const components = {
         fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
         fontWeight: 700,
         letterSpacing: "-0.015em",
+        mt: 5,
+        mb: 3,
       }}
       {...p}
     />
@@ -102,6 +104,8 @@ const components = {
         fontFamily: '"Space Grotesk", "DM Sans", sans-serif',
         fontWeight: 700,
         letterSpacing: "-0.015em",
+        mt: 4,
+        mb: 2,
       }}
       {...p}
     />
