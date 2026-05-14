@@ -62,6 +62,18 @@
       "repoUrl": "https://github.com/raphaelaleixo/arcanepoker",
       "ogImage": "/og/arcanepoker.png",
       "note": "rule-bending cards"
+    },
+    {
+      "id": "standoff",
+      "name": "The Standoff",
+      "inspiration": "Cash'n Guns (Maublanc, 2005)",
+      "description": "Aim, bluff, duck — split the captain's hoard among the brave. A real-time standoff played on a shared screen, with your phone as the flintlock you point at your crewmates.",
+      "players": "4–6 players",
+      "status": "live",
+      "url": "https://standoff.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/react-standoff",
+      "ogImage": "/og/standoff.png",
+      "note": "bluff & duck"
     }
   ],
   "apparatus": {
