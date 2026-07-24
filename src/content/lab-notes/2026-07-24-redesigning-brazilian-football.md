@@ -1,16 +1,16 @@
 # Redesigning Brazilian Football
 
-Romário came from Olaria. Ronaldo from São Cristóvão. Rivaldo from Mogi Mirim. The players who won Brazil its last two World Cups were grown in clubs so small that most Brazilians under thirty have never heard of them — clubs that today, if they exist at all, play a couple of months of a state championship and then go dark until the next year.
+Romário first surfaced at Olaria. Ronaldo at São Cristóvão. Rivaldo at Mogi Mirim. Lúcio at Guará. The squads that won Brazil its last two World Cups were dotted with players like these — talents who broke through at clubs so small they have no national stage today, exactly the kind of club that plays a couple of months of a state championship and then goes dark until the next year.
 
-<NoteUp>forged in clubs that vanish from the calendar by April</NoteUp>
+<NoteUp>the kind of club that's idle by April</NoteUp>
 
-That's the part that stayed with me. Not the trophies — the soil. Brazil didn't produce its greatest stars *despite* those little clubs. It produced them *because* of them. Hundreds of teams playing real games, all year, across a country the size of a continent: that was a machine for turning teenagers into stars. Nobody built the machine on purpose. It just ran.
+That's the part that stayed with me. Not the trophies — the soil. A country the size of a continent was once covered in small clubs, each one a place where a teenager might be spotted and grow into something. Nobody designed that as a talent machine. But it worked as one — one of the things, at least, that kept Brazil producing stars. And nobody was really watching it.
 
 ## Nobody playtested this
 
 Here's what I keep coming back to, and it's a very Ludoratory way to see it: a football league is a game. Not the ninety minutes on the pitch — the *structure* around them. How many clubs there are, who plays whom, who gets promoted, who spends months with no match at all. Those are rules, and rules have consequences nobody votes on. Change the rules and you change what the system produces, whether you meant to or not.
 
-In 2003, Brazil changed the rules. It swapped its national championship for the tidy European format — one long league table, *pontos corridos* — and quietly buried the sprawling interstate cups that used to keep smaller clubs playing meaningful games for most of the year.
+In 2003, Brazil changed the rules. It swapped its national championship for the tidy European format — one long league table, *pontos corridos* — and quietly buried the interstate cups, the Rio–São Paulo and the Sul-Minas, that used to give smaller clubs meaningful games beyond their short state seasons.
 
 <NoteDown>nobody playtested this patch</NoteDown>
 
@@ -18,7 +18,7 @@ It looked like modernization. In the language of games, it was a balance patch s
 
 ## The machine, switched off
 
-You can read what happened in the numbers, and it isn't subtle. Before 2003, Brazil had won five World Cups; since, none. Five Ballon d'Or seasons between 1997 and 2007 — Ronaldo, Rivaldo, Ronaldinho, Kaká — and then eighteen straight years without a single one. The average age at which Brazil sells its best players abroad has fallen to nineteen: Endrick left at sixteen, Estêvão at seventeen. The club stopped forging stars. It became an assembly line for prospects.
+You can read what happened in the numbers, and it isn't subtle. Before 2003, Brazil had won five World Cups; since, none. Five Ballon d'Or seasons between 1997 and 2007 — Ronaldo (twice), Rivaldo, Ronaldinho, Kaká — and then eighteen straight years without a single one. The average age at which Brazil sells its best players abroad has slid from twenty-two to nineteen: Endrick's move to Real Madrid was agreed when he was sixteen, Estêvão's to Chelsea at seventeen. The club stopped forging stars. It became an assembly line for prospects.
 
 No single line proves cause. But five independent curves all bend at the same moment, right after the same structural change, and it gets hard to keep calling that a coincidence. The machine still spins — Brazilian football has never earned more money — it just stopped producing the thing it existed for.
 
