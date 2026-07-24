@@ -17,12 +17,11 @@ function Pointer({
   children?: ReactNode;
   direction?: "up" | "down";
 }) {
+  const isDown = direction === "down";
   return (
     <Box
       sx={{
         position: "relative",
-        my: 2,
-        pl: 5,
         color: "accent.amber",
         fontFamily: '"Caveat", cursive',
         fontSize: "24px",
@@ -33,6 +32,12 @@ function Pointer({
           lineHeight: "inherit",
           mb: 0,
         },
+        // Up: arrow in the left gutter pointing up at the paragraph above.
+        // Down: shrink-wrap the scribble so the arrow sits just off its right
+        // end, pointing down at the paragraph below (with extra gap for it).
+        ...(isDown
+          ? { display: "inline-block", pr: 5, mt: 2, mb: 4 }
+          : { pl: 5, my: 2 }),
       }}
     >
       <Box
@@ -41,16 +46,13 @@ function Pointer({
         viewBox="0 0 50 60"
         sx={{
           position: "absolute",
-          left: 0,
-          ...(direction === "up" ? { top: "-11px" } : { bottom: "-25px" }),
           width: 28,
           height: 34,
           color: "accent.amber",
           overflow: "visible",
-          transform:
-            direction === "down"
-              ? "rotate(-12deg) scale(-1, -1)"
-              : "rotate(-12deg) scaleX(-1)",
+          ...(isDown
+            ? { right: 0, bottom: "-18px", transform: "scaleY(-1) rotate(48deg)" }
+            : { left: 0, top: "-11px", transform: "rotate(-12deg) scaleX(-1)" }),
         }}
       >
         <path

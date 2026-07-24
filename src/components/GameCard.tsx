@@ -10,6 +10,8 @@ export interface GameCardProps {
   url?: string;
   repoUrl?: string;
   players?: string;
+  /** Overlay chip label shown on hover when `url` is set. Defaults to "Play now ↗". */
+  ctaLabel?: string;
   inspiration?: string | null;
   note?: string | null;
   /** Even-indexed (0, 2 — left column) cards tilt left; odd tilt right. */
@@ -25,6 +27,7 @@ export function GameCard({
   url,
   repoUrl,
   players,
+  ctaLabel = "Play now ↗",
   inspiration,
   note,
   index = 0,
@@ -87,7 +90,7 @@ export function GameCard({
               boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
             }}
           >
-            Play now ↗
+            {ctaLabel}
           </Box>
         </Box>
       )}

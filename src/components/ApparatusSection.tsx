@@ -23,14 +23,6 @@ export function ApparatusSection({ apparatus, label, note }: ApparatusSectionPro
           borderRadius: "8px",
           position: "relative",
           overflow: "visible",
-          "&::before": {
-            content: '""',
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "repeating-linear-gradient(45deg, rgba(127,255,212,0.09) 0 2px, transparent 2px 8px)",
-            pointerEvents: "none",
-            borderRadius: "8px",
-          },
         }}
       >
         {/* content area — links to docs */}
