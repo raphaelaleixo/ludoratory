@@ -74,6 +74,18 @@
       "repoUrl": "https://github.com/raphaelaleixo/react-standoff",
       "ogImage": "/og/standoff.png",
       "note": "bluff & duck"
+    },
+    {
+      "id": "tierlist",
+      "name": "Tierlist",
+      "inspiration": "My Favourite Things (Aoyama & Pepe_R, 2015)",
+      "description": "Rank six favourites from S to F for the player beside you — then play the hand they wrote for you, tiers hidden. Lowest tier takes the trick, except when F meets S.",
+      "players": "3–6 players",
+      "status": "live",
+      "url": "https://tierlist.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/tierlist",
+      "ogImage": "/og/tierlist.png",
+      "note": "hidden tiers"
     }
   ],
   "apparatus": {
