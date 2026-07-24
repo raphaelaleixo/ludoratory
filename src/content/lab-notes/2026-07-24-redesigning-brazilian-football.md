@@ -1,4 +1,4 @@
-# The Closed Laboratory
+# Redesigning Brazilian Football
 
 Romário came from Olaria. Ronaldo from São Cristóvão. Rivaldo from Mogi Mirim. The players who won Brazil its last two World Cups were grown in clubs so small that most Brazilians under thirty have never heard of them — clubs that today, if they exist at all, play a couple of months of a state championship and then go dark until the next year.
 
@@ -40,7 +40,7 @@ The manifesto is in Portuguese, and it goes far deeper than this note — the da
 
 <GameCard
   name="Ligas do Brasil"
-  image="/lab-notes/the-closed-laboratory/ligas-do-brasil.png"
+  image="/lab-notes/redesigning-brazilian-football/ligas-do-brasil.png"
   url="https://raphaelaleixo.github.io/ligas-do-brasil/"
   repoUrl="https://github.com/raphaelaleixo/ligas-do-brasil"
   ctaLabel="Read the manifesto ↗"
