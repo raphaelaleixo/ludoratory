@@ -3,6 +3,8 @@ import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
+  Outlet,
+  ScrollRestoration,
   type RouteObject,
 } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
@@ -17,12 +19,29 @@ const LabNotesIndexPage = lazy(() => import("./pages/LabNotesIndexPage"));
 const LabNotePage = lazy(() => import("./pages/LabNotePage"));
 const OgImagePage = lazy(() => import("./pages/OgImagePage"));
 
+// Root layout: <ScrollRestoration> resets scroll to top on new navigations
+// (and restores the prior position on back/forward), which createBrowserRouter
+// does not do on its own.
+function RootLayout() {
+  return (
+    <>
+      <ScrollRestoration />
+      <Outlet />
+    </>
+  );
+}
+
 const routes: RouteObject[] = [
-  { path: "/", element: <HomePage /> },
-  { path: "/lab-notes", element: <LabNotesIndexPage /> },
-  { path: "/lab-notes/:slug", element: <LabNotePage /> },
-  { path: "/og-image", element: <OgImagePage /> },
-  { path: "*", element: <Navigate to="/" replace /> },
+  {
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <HomePage /> },
+      { path: "/lab-notes", element: <LabNotesIndexPage /> },
+      { path: "/lab-notes/:slug", element: <LabNotePage /> },
+      { path: "/og-image", element: <OgImagePage /> },
+      { path: "*", element: <Navigate to="/" replace /> },
+    ],
+  },
 ];
 
 const router = createBrowserRouter(routes);
