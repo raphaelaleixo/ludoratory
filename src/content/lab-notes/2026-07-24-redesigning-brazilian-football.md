@@ -44,7 +44,7 @@ The manifesto is in Portuguese, and it goes far deeper than this note — the da
   url="https://raphaelaleixo.github.io/ligas-do-brasil/"
   repoUrl="https://github.com/raphaelaleixo/ligas-do-brasil"
   ctaLabel="Read the manifesto ↗"
-  note="reopen the lab"
+  note="Brazil's big!"
 >
   A manifesto — and the season simulator that backs it — for restructuring Brazilian football into six regional leagues and one open, Champions-League-style national cup.
 </GameCard>
