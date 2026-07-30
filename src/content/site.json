@@ -86,11 +86,23 @@
       "repoUrl": "https://github.com/raphaelaleixo/tierlist",
       "ogImage": "/og/tierlist.png",
       "note": "hidden tiers"
+    },
+    {
+      "id": "fakedev",
+      "name": "A Fake Dev Goes to Amsterdam",
+      "inspiration": "A Fake Artist Goes to New York (Sasaki, 2011)",
+      "description": "Build one UI component together, one CSS edit per turn. Everyone at the table knows what you're building except the impostor, who has to bluff in code without ever learning the answer.",
+      "players": "4–10 players",
+      "status": "live",
+      "url": "https://fakedev.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/fakedev",
+      "ogImage": "/og/fakedev.png",
+      "note": null
     }
   ],
   "apparatus": {
     "name": "react-gameroom",
-    "version": "0.11",
+    "version": "0.12",
     "description": "The reusable lobby system every Ludoratory game runs on. A stateless React component library handling player slots, room state, QR-code joining, and URL routing. Bring your own state, bring your own game.",
     "installSnippet": "npm install react-gameroom",
     "repoUrl": "https://github.com/raphaelaleixo/react-gameroom",
