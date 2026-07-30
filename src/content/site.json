@@ -102,7 +102,7 @@
   ],
   "apparatus": {
     "name": "react-gameroom",
-    "version": "0.11",
+    "version": "0.12",
     "description": "The reusable lobby system every Ludoratory game runs on. A stateless React component library handling player slots, room state, QR-code joining, and URL routing. Bring your own state, bring your own game.",
     "installSnippet": "npm install react-gameroom",
     "repoUrl": "https://github.com/raphaelaleixo/react-gameroom",
