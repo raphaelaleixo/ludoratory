@@ -98,6 +98,18 @@
       "repoUrl": "https://github.com/raphaelaleixo/fakedev",
       "ogImage": "/og/fakedev.png",
       "note": null
+    },
+    {
+      "id": "venn",
+      "name": "What the Venn?",
+      "inspiration": "Things in Rings (Hayward, 2023)",
+      "description": "One player holds a secret rule for each ring; everyone else places things into the diagram and learns from where they get corrected. A deduction party game on a shared screen, controlled from your phones.",
+      "players": "3–6 players",
+      "status": "live",
+      "url": "https://venn.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/what-the-venn",
+      "ogImage": "/og/venn.png",
+      "note": "hidden rules"
     }
   ],
   "apparatus": {
