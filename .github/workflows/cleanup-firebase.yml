@@ -1,0 +1,33 @@
+name: Cleanup Shared Firebase Database
+
+# Wipes the shared `ludoratory-shared` Realtime Database every night, per the
+# house rule that the database is wiped daily. Every new game points at this one
+# project (see Projects/CLAUDE.md), so this clears room state for all of them at
+# once. Games created before that decision have their own Firebase projects and
+# are unaffected — react-gameroom has its own separate cleanup workflow.
+#
+# Deletes the entire root rather than just `games/`: every pre-existing game
+# writes to a bare `rooms/{roomId}` path, so a namespace-only wipe would let
+# convention violations accumulate forever. Nothing in this database is meant
+# to survive the night.
+
+on:
+  schedule:
+    - cron: "0 4 * * *" # Daily at 04:00 UTC (01:00 BRT — low-play hours)
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wipe all room data
+        run: |
+          code=$(curl -s -o /tmp/response.json -w "%{http_code}" \
+            -X DELETE "${{ secrets.LUDORATORY_SHARED_DATABASE_URL }}/.json")
+          echo "HTTP $code"
+          cat /tmp/response.json; echo
+          if [ "$code" != "200" ]; then
+            echo "::error::Wipe failed with HTTP $code"
+            exit 1
+          fi
+          echo "Database wiped."
