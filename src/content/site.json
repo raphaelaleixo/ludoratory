@@ -9,7 +9,7 @@
   },
   "sections": [
     { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "ϟ no installs. shared screen + phones" },
-    { "id": "labOriginals",    "label": "Lab Originals",    "note": "✶ home-grown experiments. original rules" },
+    { "id": "labOriginals",    "label": "Lab Originals",    "note": "✶ built here, not ported" },
     { "id": "apparatus",       "label": "The Apparatus",    "note": "⌬ powering every specimen above" },
     { "id": "houseRules",      "label": "House Rules",      "note": "⚖ how this place actually works" },
     { "id": "labNotes",        "label": "Lab Notes",        "note": "✎ scratchpad. half-baked thoughts from the bench" }
@@ -93,7 +93,7 @@
       "inspiration": "A Fake Artist Goes to New York (Sasaki, 2011)",
       "description": "Build one UI component together, one CSS edit per turn. Everyone at the table knows what you're building except the impostor, who has to bluff in code without ever learning the answer.",
       "players": "4–10 players",
-      "status": "live",
+      "status": "original",
       "url": "https://fakedev.ludoratory.com",
       "repoUrl": "https://github.com/raphaelaleixo/fakedev",
       "ogImage": "/og/fakedev.png",
