@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { MemoryRouter } from "react-router-dom";
 import theme from "../src/theme/theme";
 import HomePage from "../src/pages/HomePage";
+import siteContent from "../src/content/site.json";
 
 function renderHome() {
   return render(
@@ -18,7 +19,9 @@ describe("HomePage", () => {
   it("renders the headline tokens", () => {
     renderHome();
     expect(screen.getByText(/From Experiment/i)).toBeInTheDocument();
-    expect(screen.getByText("Experience")).toBeInTheDocument();
+    // Read the glow token from the content rather than restating it, so the
+    // assertion follows the copy instead of drifting out of sync with it.
+    expect(screen.getByText(siteContent.site.headlineGlowToken)).toBeInTheDocument();
   });
 
   it("renders all four games by name", () => {

@@ -105,6 +105,7 @@
       "description": "A printable scavenger hunt for kids at a music festival. Spot festival style, take on eight missions, then write down the one thing you never want to forget.",
       "status": "original",
       "url": "https://heyho.ludoratory.com",
+      "meta": "8 missions",
       "repoUrl": "https://github.com/raphaelaleixo/heyho",
       "ogImage": "/og/heyho.png",
       "note": "print and play",

@@ -8,14 +8,14 @@ function renderCard(ui: React.ReactElement) {
 }
 
 describe("GameCard", () => {
-  it("renders name, players, description (children), and play/code links when all props are present", () => {
+  it("renders name, meta, description (children), and play/code links when all props are present", () => {
     renderCard(
       <GameCard
         name="Krimi"
         image="/og/krimi.png"
         url="https://krimi.ludoratory.com"
         repoUrl="https://github.com/raphaelaleixo/krimi"
-        players="5–12 players"
+        meta="5–12 players"
         inspiration="Deception: Murder in Hong Kong (Ho, 2014)"
       >
         Find the hidden murderer.
@@ -42,7 +42,7 @@ describe("GameCard", () => {
         image="/i.png"
         url="https://x"
         repoUrl="https://r"
-        players="2"
+        meta="2"
         inspiration="Some Source (2020)"
       >
         body
@@ -53,7 +53,7 @@ describe("GameCard", () => {
 
   it("omits the inspiration line when not provided", () => {
     renderCard(
-      <GameCard name="X" image="/i.png" url="https://x" repoUrl="https://r" players="2">
+      <GameCard name="X" image="/i.png" url="https://x" repoUrl="https://r" meta="2">
         body
       </GameCard>,
     );
@@ -67,7 +67,7 @@ describe("GameCard", () => {
         image="/i.png"
         url="https://x"
         repoUrl="https://r"
-        players="2"
+        meta="2"
         note="hidden roles"
       >
         body
@@ -78,7 +78,7 @@ describe("GameCard", () => {
 
   it("does not render the play link or overlay when url is omitted", () => {
     renderCard(
-      <GameCard name="X" image="/i.png" repoUrl="https://r" players="2">
+      <GameCard name="X" image="/i.png" repoUrl="https://r" meta="2">
         body
       </GameCard>,
     );
@@ -88,7 +88,7 @@ describe("GameCard", () => {
     expect(screen.getByRole("link", { name: /code/i })).toBeInTheDocument();
   });
 
-  it("omits the footer entirely when both repoUrl and players are absent", () => {
+  it("omits the footer entirely when both repoUrl and meta are absent", () => {
     renderCard(
       <GameCard name="X" image="/i.png" url="https://x">
         body
@@ -98,9 +98,9 @@ describe("GameCard", () => {
     expect(screen.queryByText(/players/i)).not.toBeInTheDocument();
   });
 
-  it("renders only players in the footer when repoUrl is absent", () => {
+  it("renders only meta in the footer when repoUrl is absent", () => {
     renderCard(
-      <GameCard name="X" image="/i.png" url="https://x" players="3–5 players">
+      <GameCard name="X" image="/i.png" url="https://x" meta="3–5 players">
         body
       </GameCard>,
     );
@@ -108,12 +108,36 @@ describe("GameCard", () => {
     expect(screen.queryByRole("link", { name: /code/i })).not.toBeInTheDocument();
   });
 
-  it("renders only the code link in the footer when players is absent", () => {
+  it("renders only the code link in the footer when meta is absent", () => {
     renderCard(
       <GameCard name="X" image="/i.png" url="https://x" repoUrl="https://r">
         body
       </GameCard>,
     );
     expect(screen.getByRole("link", { name: /code/i })).toHaveAttribute("href", "https://r");
+  });
+
+  // `players` is the deprecated spelling of `meta`. Lab notes pass it as an MDX
+  // prop, which nothing typechecks, so the fallback has to keep working — and
+  // has to be covered deliberately rather than by whichever tests happen to use it.
+  describe("deprecated players prop", () => {
+    it("still fills the footer when meta is absent", () => {
+      renderCard(
+        <GameCard name="X" image="/i.png" url="https://x" players="5–12 players">
+          body
+        </GameCard>,
+      );
+      expect(screen.getByText(/5–12 players/)).toBeInTheDocument();
+    });
+
+    it("loses to meta when both are given", () => {
+      renderCard(
+        <GameCard name="X" image="/i.png" url="https://x" meta="print & play" players="2 players">
+          body
+        </GameCard>,
+      );
+      expect(screen.getByText(/print & play/)).toBeInTheDocument();
+      expect(screen.queryByText(/2 players/)).not.toBeInTheDocument();
+    });
   });
 });
