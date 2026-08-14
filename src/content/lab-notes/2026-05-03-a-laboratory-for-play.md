@@ -15,7 +15,7 @@ Our work [was cited by authors we admired,](https://www.raphkoster.com/2009/02/1
   name="O Calabouço Tétrico"
   image="/lab-notes/a-laboratory-for-play/tetric-pit.jpg"
   url="https://www.kongregate.com/en/games/raphaelaleixo/tetric-pit?permalink=tetric-pit&set_locale=true&uploaded_by=raphaelaleixo"
-  players="solo"
+  meta="solo"
   note="theming matters"
 >
   Tetric Pit is a Flash game from 2009 that reimagines Tetris with a darker twist. Instead of abstract blocks, you stack prisoners into a pit while they try to escape by forming structures, turning a familiar system into an unsettling experiment about how context changes the meaning of play.

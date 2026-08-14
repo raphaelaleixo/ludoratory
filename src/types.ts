@@ -6,17 +6,28 @@ export interface Attribution {
   url: string;
 }
 
-export interface Game {
+/**
+ * Anything catalogued on the site — a game, a printable, a toy, a tool.
+ * Only the fields every specimen genuinely has are required; the rest are
+ * optional so a non-game doesn't have to fake a player count or a repo.
+ */
+export interface Specimen {
   id: string;
   name: string;
-  inspiration: string | null;
   description: string;
-  players: string;
   status: GameStatus;
   url: string;
-  repoUrl: string;
   ogImage: string;
-  note: string | null;
+  /** Credit line for adaptations, or a freeform subtitle for originals. */
+  inspiration?: string | null;
+  /** Freeform footer caption: "5–12 players", "print & play", "~20 min". */
+  meta?: string;
+  /** Omitted for specimens with no public source. */
+  repoUrl?: string;
+  /** Handwritten scribble beside the title. */
+  note?: string | null;
+  /** Overrides the card's "Play now ↗" overlay. */
+  ctaLabel?: string;
 }
 
 export interface Apparatus {
@@ -60,7 +71,7 @@ export interface Section {
 export interface SiteContent {
   site: SiteCopy;
   sections: Section[];
-  games: Game[];
+  games: Specimen[];
   apparatus: Apparatus;
   houseRules: HouseRule[];
   footer: { links: FooterLink[]; license: FooterLink };
