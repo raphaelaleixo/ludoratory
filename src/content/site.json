@@ -98,6 +98,16 @@
       "repoUrl": "https://github.com/raphaelaleixo/fakedev",
       "ogImage": "/og/fakedev.png",
       "note": null
+    },
+    {
+      "id": "heyho",
+      "name": "Ho Hey, Let's Play!",
+      "description": "A printable scavenger hunt for kids at a music festival. Spot festival style, take on eight missions, then write down the one thing you never want to forget.",
+      "status": "original",
+      "url": "https://heyho.ludoratory.com",
+      "repoUrl": "https://github.com/raphaelaleixo/heyho",
+      "ogImage": "/og/heyho.png",
+      "note": "print and play"
     }
   ],
   "apparatus": {
