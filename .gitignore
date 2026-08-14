@@ -27,3 +27,8 @@ dist-ssr
 src/content/lab-notes/*-markdown-styling-test.md
 public/og/notes/markdown-styling-test.png
 
+# Claude Code machine-local state. A shared .claude/settings.json is fine to
+# commit; these two are personal to one checkout.
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
