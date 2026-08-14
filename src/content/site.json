@@ -124,7 +124,7 @@
   "houseRules": [
     { "number": "01", "title": "Free to play, always.",      "description": "No paywalls, no subscriptions, no premium tiers. You and your friends, a URL, and a phone each." },
     { "number": "02", "title": "Open source, every game.",   "description": "Each game's code lives on GitHub. Read it, fork it, run your own copy. Mistakes welcome, PRs even more so." },
-    { "number": "03", "title": "No analytics, no trackers.", "description": "No third-party scripts watching what you do here. Your game-night is yours. We don't even know how many people played." },
+    { "number": "03", "title": "No trackers, no profiles.",  "description": "No third-party scripts following you around, no cookies, nothing that identifies you. Your game-night is yours. If a game ever needs to count something, we'll say what and why, right on that game." },
     { "number": "04", "title": "The database wipes daily.",  "description": "Every room evaporates at midnight UTC. There is no archive, no leaderboard server, no record. Play, then disappear." }
   ],
   "footer": {

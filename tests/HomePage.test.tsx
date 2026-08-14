@@ -36,11 +36,12 @@ describe("HomePage", () => {
     expect(screen.getByText("react-gameroom")).toBeInTheDocument();
   });
 
-  it("renders the four house rules titles", () => {
+  it("renders every house rule title", () => {
     renderHome();
-    expect(screen.getByText(/Free to play/i)).toBeInTheDocument();
-    expect(screen.getByText(/Open source/i)).toBeInTheDocument();
-    expect(screen.getByText(/No analytics/i)).toBeInTheDocument();
-    expect(screen.getByText(/database wipes daily/i)).toBeInTheDocument();
+    // Follow the content rather than restating it, so rewording a rule edits
+    // one file instead of two.
+    siteContent.houseRules.forEach((rule) => {
+      expect(screen.getByText(rule.title)).toBeInTheDocument();
+    });
   });
 });
