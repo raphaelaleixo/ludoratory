@@ -9,6 +9,9 @@ export interface GameCardProps {
   children: ReactNode;
   url?: string;
   repoUrl?: string;
+  /** Freeform footer caption: "5–12 players", "print & play", "~20 min". */
+  meta?: string;
+  /** @deprecated Use `meta`. Kept so older MDX lab notes keep rendering. */
   players?: string;
   /** Overlay chip label shown on hover when `url` is set. Defaults to "Play now ↗". */
   ctaLabel?: string;
@@ -26,13 +29,15 @@ export function GameCard({
   children,
   url,
   repoUrl,
+  meta,
   players,
   ctaLabel = "Play now ↗",
   inspiration,
   note,
   index = 0,
 }: GameCardProps) {
-  const hasFooter = Boolean(repoUrl || players);
+  const metaLine = meta ?? players;
+  const hasFooter = Boolean(repoUrl || metaLine);
 
   const imageBlock = (
     <Box
@@ -217,7 +222,7 @@ export function GameCard({
             color: "text.secondary",
           }}
         >
-          {players && <Box component="span">{players}</Box>}
+          {metaLine && <Box component="span">{metaLine}</Box>}
           {repoUrl && (
             <Link
               href={repoUrl}

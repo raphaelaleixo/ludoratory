@@ -1,11 +1,11 @@
 import Box from "@mui/material/Box";
-import type { Game } from "../types";
+import type { Specimen } from "../types";
 import { GameCard } from "./GameCard";
 import { SectionLabel } from "./SectionLabel";
 import { SectionNote } from "./SectionNote";
 
 interface SpecimenCatalogProps {
-  games: Game[];
+  games: Specimen[];
   label: string;
   note?: string;
 }
