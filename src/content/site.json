@@ -5,12 +5,12 @@
     "attribution": { "name": "Raphael Aleixo", "url": "https://aleixo.me" },
     "headline": ["From Experiments", "to Experiences."],
     "headlineGlowToken": "Experiences",
-    "thesis": "A lab for ideas, a playground for play. Ludoratory turns board game concepts into interactive experiences—rebuilt, reimagined, and ready to be played. Some build on existing games, others start from scratch, all exploring how mechanics, theme, and technology create new ways to play online."
+    "thesis": "A lab for ideas, a playground for play. Some experiments here start from a board game worth taking apart; others start from a blank bench — a printable, a toy, a game with no precedent. What they share is the question: how do mechanics, theme, and technology make new ways to play?"
   },
   "sections": [
     { "id": "specimenCatalog", "label": "Specimen Catalog", "note": "ϟ no installs. shared screen + phones" },
     { "id": "labOriginals",    "label": "Lab Originals",    "note": "✶ built here, not ported" },
-    { "id": "apparatus",       "label": "The Apparatus",    "note": "⌬ powering every specimen above" },
+    { "id": "apparatus",       "label": "The Apparatus",    "note": "⌬ powering the multiplayer games above" },
     { "id": "houseRules",      "label": "House Rules",      "note": "⚖ how this place actually works" },
     { "id": "labNotes",        "label": "Lab Notes",        "note": "✎ scratchpad. half-baked thoughts from the bench" }
   ],
@@ -115,7 +115,7 @@
   "apparatus": {
     "name": "react-gameroom",
     "version": "0.12",
-    "description": "The reusable lobby system every Ludoratory game runs on. A stateless React component library handling player slots, room state, QR-code joining, and URL routing. Bring your own state, bring your own game.",
+    "description": "The reusable lobby system every multiplayer game here runs on. A stateless React component library handling player slots, room state, QR-code joining, and URL routing. Bring your own state, bring your own game.",
     "installSnippet": "npm install react-gameroom",
     "repoUrl": "https://github.com/raphaelaleixo/react-gameroom",
     "docsUrl": "https://raphaelaleixo.github.io/react-gameroom/",
